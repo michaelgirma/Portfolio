@@ -15,9 +15,10 @@ mainbtn1.addEventListener("click", function()
     { 
         isScrolling = true;
         var targetElement = document.getElementById("myjourney");
-        var targetOffsetTop = targetElement.offsetTop;
+        var screenHeight = window.innerHeight;
+        var targetOffsetPercent = 0.4;
 
-        targetOffsetTop += 250;
+        targetOffsetTop = targetElement.offsetTop + (screenHeight * targetOffsetPercent);
 
         window.scrollTo({
         top: targetOffsetTop,
