@@ -30,7 +30,7 @@
 
 #navbar__logo{
     background-color: #ffff;
-    background-image: linear-gradient(to top, red 25%, #ffff 75%);
+    background-image: linear-gradient(to top, red 25%, blue 75%);
     background-size: 100%;
     -webkit-background-clip: text;
     -moz-background-clip: text;
