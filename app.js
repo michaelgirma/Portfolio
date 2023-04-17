@@ -16,9 +16,23 @@ mainbtn1.addEventListener("click", function()
         isScrolling = true;
         var targetElement = document.getElementById("myjourney");
         var screenHeight = window.innerHeight;
-        var targetOffsetPercent = 0.4;
+        var targetOffsetPercent = 0.2;
 
-        targetOffsetTop = targetElement.offsetTop + (screenHeight * targetOffsetPercent);
+        var targetRect = targetElement.getBoundingClientRect();
+
+    // Calculate the target offset top based on the current window height and the target element's position
+        var targetOffsetTop = window.pageYOffset + targetRect.top - window.innerHeight + (screenHeight * targetOffsetPercent);
+
+    // Check if target offset exceeds document height and adjust accordingly
+        var documentHeight = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight, document.body.offsetHeight, document.documentElement.offsetHeight, document.body.clientHeight, document.documentElement.clientHeight);
+        if (targetOffsetTop > documentHeight - screenHeight) {
+          targetOffsetTop = documentHeight - screenHeight;
+        }
+
+        //var targetOffsetTop = targetElement.offsetTop + (screenHeight * targetOffsetPercent);
+        //var documentHeight = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight, document.body.offsetHeight, document.documentElement.offsetHeight, document.body.clientHeight, document.documentElement.clientHeight);
+        //if (targetOffsetTop > documentHeight - screenHeight) {
+          //targetOffsetTop = documentHeight - screenHeight;
 
         window.scrollTo({
         top: targetOffsetTop,
