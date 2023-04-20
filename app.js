@@ -6,7 +6,8 @@ menu.addEventListener('click', function(){
     menuLinks.classList.toggle('active');
 });
 
-var mainbtn1 = document.getElementById("mainbtn1")
+/* Life Button Code*/
+var mainbtn1 = document.getElementById("lifebtn")
 var isScrolling = false;
 
 mainbtn1.addEventListener("click", function()
@@ -20,19 +21,13 @@ mainbtn1.addEventListener("click", function()
 
         var targetRect = targetElement.getBoundingClientRect();
 
-    // Calculate the target offset top based on the current window height and the target element's position
         var targetOffsetTop = window.pageYOffset + targetRect.top - window.innerHeight + (screenHeight * targetOffsetPercent);
 
-    // Check if target offset exceeds document height and adjust accordingly
+    
         var documentHeight = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight, document.body.offsetHeight, document.documentElement.offsetHeight, document.body.clientHeight, document.documentElement.clientHeight);
         if (targetOffsetTop > documentHeight - screenHeight) {
           targetOffsetTop = documentHeight - screenHeight;
         }
-
-        //var targetOffsetTop = targetElement.offsetTop + (screenHeight * targetOffsetPercent);
-        //var documentHeight = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight, document.body.offsetHeight, document.documentElement.offsetHeight, document.body.clientHeight, document.documentElement.clientHeight);
-        //if (targetOffsetTop > documentHeight - screenHeight) {
-          //targetOffsetTop = documentHeight - screenHeight;
 
         window.scrollTo({
         top: targetOffsetTop,
@@ -53,6 +48,50 @@ window.addEventListener("scroll", function() {
     {
       mainbtn1.disabled = false;
     }
+  });
+
+  /* Home Button Code */
+  var mainbtn1 = document.getElementById("homebtn")
+  var isScrolling = false;
+
+  mainbtn1.addEventListener("click", function()
+    {
+    if (!isScrolling) 
+    { 
+        isScrolling = true;
+        var targetElement = document.getElementById("myjourney");
+        var screenHeight = window.innerHeight;
+        var targetOffsetPercent = -1;
+
+        var targetRect = targetElement.getBoundingClientRect();
+
+        var targetOffsetTop = window.pageYOffset + targetRect.top - window.innerHeight + (screenHeight * targetOffsetPercent);
+
+    
+        var documentHeight = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight, document.body.offsetHeight, document.documentElement.offsetHeight, document.body.clientHeight, document.documentElement.clientHeight);
+        if (targetOffsetTop > documentHeight - screenHeight) {
+          targetOffsetTop = documentHeight - screenHeight;
+        }
+
+        window.scrollTo({
+        top: targetOffsetTop,
+        behavior: "smooth"
+        });
+
+        setTimeout(function(){
+        isScrolling = false;
+        }, 50);
+    }
+  })
+
+        window.addEventListener("scroll", function() {
+          if (isScrolling) 
+          {
+            mainbtn1.disabled = true;
+          } else 
+          {
+            mainbtn1.disabled = false;
+          }
   });
     
 
