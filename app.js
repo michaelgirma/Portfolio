@@ -17,7 +17,7 @@ mainbtn1.addEventListener("click", function()
         isScrolling = true;
         var targetElement = document.getElementById("myjourney");
         var screenHeight = window.innerHeight;
-        var targetOffsetPercent = 0.2;
+        var targetOffsetPercent = 0.15;
 
         var targetRect = targetElement.getBoundingClientRect();
 
@@ -93,6 +93,9 @@ window.addEventListener("scroll", function() {
             mainbtn1.disabled = false;
           }
   });
+
+
+  
     
 
 

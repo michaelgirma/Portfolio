@@ -329,7 +329,7 @@
 
 /* Services Section CSS */
 
-.services {
+.life {
     background: #141414;
     display: flex;
     flex-direction: column;
@@ -337,7 +337,7 @@
     height: 100vh;
 }
 
-.services h1{
+.life h3{
     background-color: #ffff;
     background-image: linear-gradient(
         to right, 
@@ -357,13 +357,13 @@
         -moz-text-fill-color: transparent;
 }
 
-.services__container {
+.life__container {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
 
-.services__card {
+.life__card {
   margin: 1rem;
   height:525px;
   width:400px;
@@ -379,7 +379,7 @@
   color: #ffff;
 }
 
-.services__card:nth-child(2) {
+.life__card:nth-child(2) {
     background-image: linear-gradient(
     to bottom,
     rgba(0, 0, 0, 0) 0%,
@@ -388,19 +388,19 @@
   url('/images/pic2.jpg');
 }
 
-.services h2 {
+.life h2 {
     position: absolute;
     top: 350px;
     left: 30px;
 }
 
-.services__card p {
+.life__card p {
     position: absolute;
     top: 400px;
     left: 30px;
 }
 
-.services__card button {
+.life__card button {
     color: #ffff;
     padding: 10px 20px;
     border: none;
@@ -414,35 +414,99 @@
     cursor: pointer;
 }
 
-.services__card:hover {
+.life__card:hover {
     transform: scale(1.075);
     transition: 0.2s ease-in;
     cursor:pointer;
 }
 
 @media screen and (max-width: 960px) {
-    .services{
+    .life{
         height: 1600px;
     }
 
-    .services h1 {
+    .life h1 {
         font-size: 2rem;
         margin-top: 12rem;
     }
 }
 
 @media screen and (max-width: 960px) {
-    .services{
+    .life{
         height: 1400px;
     }
 
-    .services h1 {
+    .life h1 {
         font-size: 1.2rem;
     }
 
-    .services__card{
+    .life__card{
         width: 350px;
     }
+}
+
+/*Background and Interests CSS*/
+.BGI {
+    background: #141414;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+.BGI_Title {
+    background-color: #ffff;
+    background-image: linear-gradient(
+        to right, 
+        #ffff 0%, 
+        #1ce3f1 0%,
+        #ffff 43%,
+        #1ce3f1 52%,
+        #ffff 78%,
+        #1ce3f1 100% 
+        );
+        background-size: 100%;
+        margin-bottom: 5rem;
+        font-size: 2.5rem;
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        -webkit-text-fill-color:transparent;
+        -moz-text-fill-color: transparent;
+        margin-bottom: 10px;
+}
+
+.knowme_p {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #fff;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.5;
+    font-size: large;
+}
+
+/*Resume CSS*/
+.resume {
+    background-color: #ffff;
+    background-image: linear-gradient(
+        to right, 
+        #ffff 0%, 
+        #1ce3f1 0%,
+        #ffff 43%,
+        #1ce3f1 52%,
+        #ffff 78%,
+        #1ce3f1 100% 
+        );
+        background-size: 100%;
+        margin-bottom: 5rem;
+        font-size: 2.5rem;
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        -webkit-text-fill-color:transparent;
+        -moz-text-fill-color: transparent;
+        margin-bottom: 10px;
+        margin-top: 80px;
 }
 
 /* Footer Css */
