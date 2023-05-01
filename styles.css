@@ -518,6 +518,17 @@
   align-items: center;
 }
 
+a#resumeimg{
+    margin-bottom: 20px;
+}
+
+#resume__link{
+    color: #fff;
+    font-size: larger;
+}
+
+
+
 /* Footer Css */
 .footer__container{
     background-color: #141414;
@@ -579,6 +590,7 @@
 
 .website__rights {
     color: #fff;
+    margin-top: 20px;
 }
 
 @media screen and (max-width: 820px) {
