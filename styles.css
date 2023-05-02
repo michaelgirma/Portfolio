@@ -118,7 +118,7 @@
         width: 100%;
         position: absolute;
         top: -1000px;
-        opacity: 1;
+        opacity: 0;
         transition: all 0.6s ease;
         height: 50vh;
         z-index: -1;
@@ -136,7 +136,7 @@
     }
 
     #navbar__logo{
-        padding-left:25px;
+        padding-left: 25px;
     }
 
     .navbar__toggle .bar{
@@ -184,19 +184,19 @@
         cursor: pointer;
     }
 
-    #mobile-menu.is-action .bar:nth-child(2)
+    #mobile-menu.is-active .bar:nth-child(2)
     {
         opacity: 0;
     }
 
-    #mobile-menu.is-action .bar:nth-child(1)
+    #mobile-menu.is-active .bar:nth-child(1)
     {
         transform: translateY(8px) rotate(45deg);
     }
 
-    #mobile-menu.is-action .bar:nth-child(3)
+    #mobile-menu.is-active .bar:nth-child(3)
     {
-        transform: translate(-8px) rotate(-45deg);
+        transform: translateY(-8px) rotate(-45deg);
     }
 }
 
@@ -350,7 +350,7 @@
         );
         background-size: 100%;
         margin-bottom: 5rem;
-        font-size: 2.5rem;
+        font-size: 4.5rem;
         -webkit-background-clip: text;
         -moz-background-clip: text;
         -webkit-text-fill-color:transparent;
@@ -454,7 +454,7 @@
     height: 100vh;
 }
 
-.BGI_Title {
+#BGI_Title {
     background-color: #ffff;
     background-image: linear-gradient(
         to right, 
@@ -487,7 +487,7 @@
 }
 
 /*Resume CSS*/
-.resume {
+#resume {
     background-color: #ffff;
     background-image: linear-gradient(
         to right, 
@@ -508,6 +508,7 @@
         margin-bottom: 10px;
         margin-top: 30px;
 }
+
 
 #resumeimg {
   max-width: 500px; 

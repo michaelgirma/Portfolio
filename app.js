@@ -1,9 +1,9 @@
-const menu = document.querySelector('#mobile-menu')
-const menuLinks = document.querySelector('.navbar__menu')
+const menu = document.querySelector("#mobile-menu")
+const menuLinks = document.querySelector(".navbar__menu")
 
-menu.addEventListener('click', function(){
-    menu.classList.toggle('is-active');
-    menuLinks.classList.toggle('active');
+menu.addEventListener("click", function(){
+    menu.classList.toggle("is-active");
+    menuLinks.classList.toggle("active");
 });
 
 /* Life Button Code*/
@@ -94,7 +94,7 @@ window.addEventListener("scroll", function() {
           }
   });
 
-  /* Contacs Button Code */
+/* Contacs Button Code 
 
 var mainbtn1 = document.getElementById("contactsbtn")
 var isScrolling = false;
@@ -137,7 +137,7 @@ window.addEventListener("scroll", function() {
       {
         mainbtn1.disabled = false;
       }
-  });
+  });*/
 
   
     
