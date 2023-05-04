@@ -528,6 +528,44 @@ a#resumeimg{
     font-size: larger;
 }
 
+/* SKills CSS */
+.skill_section{
+  background-color: #131313;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.skill_box{
+  width: 500px;
+  height: 500px;
+  border: 1px solid white;
+}
+
+.sklbox_Title{
+    text-align: center;
+    font-size: 28px;
+    background-color: #ffff;
+    background-image: linear-gradient(
+        to right, 
+        #ffff 0%, 
+        #1ce3f1 0%,
+        #ffff 43%,
+        #1ce3f1 52%,
+        #ffff 78%,
+        #1ce3f1 100% 
+        );
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color:transparent;
+    -moz-text-fill-color: transparent;
+    margin-bottom: 30px;
+}
+
+.tw_list {
+    color: white;
+    text-align: center;
+}
+
 
 
 /* Footer Css */

@@ -94,19 +94,24 @@ window.addEventListener("scroll", function() {
           }
   });
 
-/* Contacs Button Code 
 
-var mainbtn1 = document.getElementById("contactsbtn")
+/*skills Button Code*/
+
+var mainbtn1 = document.getElementById("skillsbtn")
 var isScrolling = false;
 
-  mainbtn1.addEventListener("click", function()
-    {
+mainbtn1.addEventListener("click", function()
+{
     if (!isScrolling) 
     { 
         isScrolling = true;
         var targetElement = document.getElementById("myjourney");
         var screenHeight = window.innerHeight;
-        var targetOffsetPercent = 3;
+        var targetOffsetPercent = 2;
+
+        if (window.matchMedia("(max-width: 767px)").matches) {
+          targetOffsetPercent = 10;
+        }
 
         var targetRect = targetElement.getBoundingClientRect();
 
@@ -127,17 +132,18 @@ var isScrolling = false;
         isScrolling = false;
         }, 50);
     }
-  })
+})
 
 window.addEventListener("scroll", function() {
     if (isScrolling) 
-      {
-        mainbtn1.disabled = true;
-      } else 
-      {
-        mainbtn1.disabled = false;
-      }
-  });*/
+    {
+      mainbtn1.disabled = true;
+    } else 
+    {
+      mainbtn1.disabled = false;
+    }
+  });
+
 
   
     
