@@ -6,7 +6,12 @@ const Hero:React.FC = () => {
         <div id="Hero">
 
             <style>{`
-            
+                #Hero{
+                    display:flex;
+                    position: relative;
+                    flex-direction: column;
+                    border: 1px solid red;
+                }
             `}</style>
         </div>
     )
