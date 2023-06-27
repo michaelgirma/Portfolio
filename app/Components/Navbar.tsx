@@ -8,13 +8,7 @@ const Navbar:React.FC = () => {
                 
             </div>
             <style>{`
-                #Navbar{
-                    display: flex;
-                    position: relative;
-                    width: 100%;
-                    height: 15vh;
-                    border: 1px solid red;
-                }
+               
             `}</style>
         </div>
     )
