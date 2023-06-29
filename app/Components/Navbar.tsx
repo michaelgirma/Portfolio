@@ -1,62 +1,38 @@
 "use client" 
 import React from "react"
 import { FaBars, FaTimes } from "react-icons/fa";
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 const Navbar:React.FC = () => {
-
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
+  
   const handleMenuToggle = () => {
     setIsMenuOpen(!isMenuOpen);
   };
-
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
   
+
     return(
         <div id="Navbar" className="fade-in">
             <div id="NavbarContainer">
-                {windowWidth >= 700 && (
                   <div id="LogoContainer">
                     <p id="Logo">Logo</p>
-                  </div>
-                )}
-                {window.innerWidth < 700 ? (
-                  isMenuOpen ? (
-                    <div id="MobileMenu">
-                      <FaTimes className="icon" onClick={handleMenuToggle} />
-                      <div id="MobileListContainer">
-                          <p id="MobileSkills">Skills</p>
-                          <p id="MobileExperience">Experience</p>
-                          <p id="MobileProjects">Projects</p>
-                          <p id="MobileContact">Contacts</p>
-                      </div>
-                    </div>
-                  ) : (
-                    <FaBars className="icon" onClick={handleMenuToggle} />
-                  )
-                ) : (
-                <div id="MenuContainer">
+                  </div>                
+                  <div id="MenuContainer">
                     <div id="MenuListContainer" className={isMenuOpen ? "open" : ""}>
                         <p id="Skills">Skills</p>
                         <p id="Experience">Experience</p>
                         <p id="Projects">Projects</p>
                         <p id="Contact">Contacts</p>
                     </div>
+                    <div className="iconContainer" onClick={handleMenuToggle}>
+                      {isMenuOpen ? (
+                        <FaTimes className="icon" />
+                      ) : (
+                        <FaBars className="icon" />
+                      )}
+                    </div>
+                  </div>
                 </div>
-                )}
-            </div>
             <style>{`
                #Navbar{
                     display:flex;
@@ -67,6 +43,7 @@ const Navbar:React.FC = () => {
                     background-color: #000080;
                     border-bottom-left-radius: 30px;
                     border-bottom-right-radius: 30px;
+                    z-index: 9999;
                }
                .fade-in {
                 opacity: 0;
@@ -151,44 +128,97 @@ const Navbar:React.FC = () => {
               #MenuListContainer p:hover::after {
                 width: 100%;
               }
-              
-              .icon {
-                display: flex;
-                position: relative;
-                justify-content: center;
-                align-items: center;
-                width: 30px;
-                height: 30px;
-                padding-top: 32px;
-                color: white;
-              }
-              #MobileMenu{
-                display:flex;
-                position: absolute;
-                width: 100%;
-                height: 300px;
-                background-color: #000080;
-                border-bottom-left-radius: 30px;
-                border-bottom-right-radius: 30px;
-                padding-left: 20px;
-              }
-              #MobileListContainer{
-                display: flex;
-                position: relative;
-                width: 100%;
-                justify-content: center;
-                align-items: center;
-                flex-direction: column;
-                padding-top: 45px;
-                padding-right: 50px;
-                color: white;
-                font-size: 18px;
-              }
-            `}</style>
-        </div>
-    )
 
-}
+              .iconContainer{
+                display: none;
+              }
+              
+              @media (max-width: 700px) {
+
+                #Navbar{
+                  height: 13vh;
+                }
+                #LogoContainer {
+                  display: none;
+                }
+                
+                #MenuContainer {
+                  justify-content: center;
+                  align-items: flex-start;
+                  width: 100%;
+                  padding-bottom: 5px;
+                }
+                
+                #MenuListContainer {
+                  display: ${isMenuOpen ? 'flex' : 'none'};
+                  position: absolute;
+                  flex-direction: column;
+                  width: 100%;
+                  align-items: center;
+                  padding-top: 50px;
+                  padding-bottom: 50px;
+                  margin-top: 40px;
+                  color: white;
+                  font-size: 18px;
+                  background-color: #000080;
+                  border-bottom-left-radius: 30px;
+                  border-bottom-right-radius: 30px;
+                  animation-name: slideDownAnimation;
+                  animation-duration: 1s;
+                  animation-fill-mode: forwards;
+                }
+
+                @keyframes slideDownAnimation {
+                  0% {
+                    transform: translateY(-100%);
+                  }
+                  100% {
+                    transform: translateY(0%);
+                  }
+                }
+                
+                #MenuListContainer p {
+                  position: relative;
+                }
+                
+                #MenuListContainer p::after {
+                  content: "";
+                  position: absolute;
+                  left: 0;
+                  bottom: 0;
+                  width: 0;
+                  height: 3px;
+                  background-color: #e5fcf5;
+                  transition: width 0.5s ease;
+                }
+                
+                #MenuListContainer p:hover::after {
+                  width: 100%;
+                }
+                
+                .iconContainer {
+                  display: flex;
+                  position: relative;
+                  justify-content: center;
+                  align-items: center;
+                  width: 50px;
+                  height: 30px;
+                  padding-top: 32px;
+                  color: white;
+                  
+                }
+                .icon{
+                  width: 100px;
+                  height: 35px;
+                }
+              }
+              
+            `}
+            </style>
+        </div>
+      );
+
+};
 
 
 export default Navbar

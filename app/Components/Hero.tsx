@@ -15,11 +15,11 @@ const Hero:React.FC = () => {
                     flex-direction: column;
                     width: 100%;
                     height: 84vh;
+                    // border: 1px solid black;
                 }
                 #HeroContainer{
 
                 }
-                
             `}</style>
         </div>
     )
