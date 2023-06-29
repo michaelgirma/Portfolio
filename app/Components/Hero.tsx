@@ -4,14 +4,22 @@ import React from "react"
 const Hero:React.FC = () => {
     return(
         <div id="Hero">
+            <div id="HeroContainer">
+                
+            </div>
 
             <style>{`
                 #Hero{
                     display:flex;
                     position: relative;
                     flex-direction: column;
-                    border: 1px solid red;
+                    width: 100%;
+                    height: 84vh;
                 }
+                #HeroContainer{
+
+                }
+                
             `}</style>
         </div>
     )

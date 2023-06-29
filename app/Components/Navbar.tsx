@@ -1,21 +1,61 @@
 "use client" 
 import React from "react"
+import { FaBars, FaTimes } from "react-icons/fa";
+import { useState, useEffect } from 'react';
 
 const Navbar:React.FC = () => {
+
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  const handleMenuToggle = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+  
     return(
         <div id="Navbar" className="fade-in">
             <div id="NavbarContainer">
-                <div id="LogoContainer">
-                        <p id="Logo">Logo</p>
-                </div>
+                {windowWidth >= 700 && (
+                  <div id="LogoContainer">
+                    <p id="Logo">Logo</p>
+                  </div>
+                )}
+                {window.innerWidth < 700 ? (
+                  isMenuOpen ? (
+                    <div id="MobileMenu">
+                      <FaTimes className="icon" onClick={handleMenuToggle} />
+                      <div id="MobileListContainer">
+                          <p id="MobileSkills">Skills</p>
+                          <p id="MobileExperience">Experience</p>
+                          <p id="MobileProjects">Projects</p>
+                          <p id="MobileContact">Contacts</p>
+                      </div>
+                    </div>
+                  ) : (
+                    <FaBars className="icon" onClick={handleMenuToggle} />
+                  )
+                ) : (
                 <div id="MenuContainer">
-                    <div id="MenuListContainer">
+                    <div id="MenuListContainer" className={isMenuOpen ? "open" : ""}>
                         <p id="Skills">Skills</p>
                         <p id="Experience">Experience</p>
                         <p id="Projects">Projects</p>
                         <p id="Contact">Contacts</p>
                     </div>
                 </div>
+                )}
             </div>
             <style>{`
                #Navbar{
@@ -110,6 +150,39 @@ const Navbar:React.FC = () => {
               
               #MenuListContainer p:hover::after {
                 width: 100%;
+              }
+              
+              .icon {
+                display: flex;
+                position: relative;
+                justify-content: center;
+                align-items: center;
+                width: 30px;
+                height: 30px;
+                padding-top: 32px;
+                color: white;
+              }
+              #MobileMenu{
+                display:flex;
+                position: absolute;
+                width: 100%;
+                height: 300px;
+                background-color: #000080;
+                border-bottom-left-radius: 30px;
+                border-bottom-right-radius: 30px;
+                padding-left: 20px;
+              }
+              #MobileListContainer{
+                display: flex;
+                position: relative;
+                width: 100%;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                padding-top: 45px;
+                padding-right: 50px;
+                color: white;
+                font-size: 18px;
               }
             `}</style>
         </div>
