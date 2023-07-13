@@ -1,7 +1,7 @@
 "use client" 
 import React from "react"
 import { FaBars, FaTimes } from "react-icons/fa";
-import { useState } from 'react';
+import { useState } from 'react'
 
 const Navbar:React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,10 +19,10 @@ const Navbar:React.FC = () => {
                   </div>                
                   <div id="MenuContainer">
                     <div id="MenuListContainer" className={isMenuOpen ? "open" : ""}>
-                        <p id="Skills">Skills</p>
-                        <p id="Experience">Experience</p>
-                        <p id="Projects">Projects</p>
-                        <p id="Contact">Contacts</p>
+                        <p className="style" id="Skills">Skills</p>
+                        <p className="style" id="Experience">Experience</p>
+                        <p className="style" id="Projects">Projects</p>
+                        <p className="style" id="Contact">Contacts</p>
                     </div>
                     <div className="iconContainer" onClick={handleMenuToggle}>
                       {isMenuOpen ? (
@@ -48,7 +48,7 @@ const Navbar:React.FC = () => {
                .fade-in {
                 opacity: 0;
                 animation-name: fadeInAnimation;
-                animation-duration: 2.5s;
+                animation-duration: 2s;
                 animation-fill-mode: forwards;
                }
               
@@ -75,9 +75,7 @@ const Navbar:React.FC = () => {
                     height: 100%;
                     jusitfy-content: center;
                     align-items: center;
-                    flex-direction: row;
-                    // border: 1px solid green;
-                    
+                    flex-direction: row;                    
                }
                #Logo{
                     display: flex;
@@ -88,7 +86,6 @@ const Navbar:React.FC = () => {
                     font-size: 48px;
                     color: white;
                     padding-left: 35px;
-                    // border: 1px solid yellow;
                }
                #MenuContainer{
                     display: flex;
@@ -97,7 +94,6 @@ const Navbar:React.FC = () => {
                     flex-direction: row;
                     justify-content: center;
                     align-items: center;
-                    // border: 1px solid purple;
                }
                #MenuListContainer{
                     display: flex;
@@ -108,7 +104,6 @@ const Navbar:React.FC = () => {
                     padding-top: 15px;
                     color: white;
                     font-size: 18px;
-                    // border: 1px solid blue;
                }
                #MenuListContainer p {
                 position: relative;
@@ -131,6 +126,9 @@ const Navbar:React.FC = () => {
 
               .iconContainer{
                 display: none;
+              }
+              .style{
+                font-family: Inter;
               }
               
               @media (max-width: 700px) {
