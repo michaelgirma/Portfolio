@@ -3,10 +3,14 @@ import React from "react"
 
 const Contact:React.FC = () => {
     return(
-        <div id="Contact">
+        <div id="Contacts">
+           
 
             <style>{`
-            
+                
+                
+                  
+                  
             `}</style>
         </div>
     )
