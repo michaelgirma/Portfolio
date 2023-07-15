@@ -1,4 +1,4 @@
-"use client" 
+'use client' 
 import React from "react"
 
 const Projects:React.FC = () => {
@@ -28,10 +28,17 @@ const Projects:React.FC = () => {
             </div>
             <style>{`
                 #Projects{
-
+                    display: flex;
+                    position: relative; 
+                    width: 100%;
+                    height: 150vh; 
                 }
                 #ProjectsContainer{
-                    
+                    width: 99%;
+                    height: 150vh;
+                    margin-left: auto;
+                    margin-right: auto;
+                    margin-top: 5px;
                 }
                 #ChurchContainer{
 

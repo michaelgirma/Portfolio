@@ -1,7 +1,7 @@
-"use client" 
+'use client' 
 import React from "react"
 import { FaBars, FaTimes } from "react-icons/fa";
-import { useState } from 'react'
+import { useState } from "react"
 
 const Navbar:React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,10 +19,10 @@ const Navbar:React.FC = () => {
                   </div>                
                   <div id="MenuContainer">
                     <div id="MenuListContainer" className={isMenuOpen ? "open" : ""}>
-                        <p className="style" id="Skills">Skills</p>
-                        <p className="style" id="Experience">Experience</p>
-                        <p className="style" id="Projects">Projects</p>
-                        <p className="style" id="Contact">Contacts</p>
+                        <p className="style" id="NavSkills">Skills</p>
+                        <p className="style" id="NavExperience">Experience</p>
+                        <p className="style" id="NavProject">Projects</p>
+                        <p className="style" id="NavContact">Contacts</p>
                     </div>
                     <div className="iconContainer" onClick={handleMenuToggle}>
                       {isMenuOpen ? (
@@ -95,33 +95,26 @@ const Navbar:React.FC = () => {
                     justify-content: center;
                     align-items: center;
                }
-               #MenuListContainer{
-                    display: flex;
-                    position: relative;
-                    width: 100%;
-                    justify-content: space-around;
-                    align-items: center;
-                    padding-top: 15px;
-                    color: white;
-                    font-size: 18px;
-               }
-               #MenuListContainer p {
+               #MenuListContainer {
+                display: flex;
                 position: relative;
-              }
-              
-              #MenuListContainer p::after {
-                content: '';
-                position: absolute;
-                left: 0;
-                bottom: 0;
-                width: 0;
-                height: 3px;
-                background-color: #E5FCF5;
-                transition: width 0.5s ease;
-              }
-              
-              #MenuListContainer p:hover::after {
                 width: 100%;
+                justify-content: space-around;
+                align-items: center;
+                padding-top: 15px;
+                color: white;
+                font-size: 18px;
+              }
+              
+              #MenuListContainer p {
+                position: relative;
+                border-bottom: 3px solid transparent; 
+
+              }
+              
+              #MenuListContainer p:hover {
+                border-bottom: 2px solid #E5FCF5;
+                transition: border-bottom 0.3s ;
               }
 
               .iconContainer{
@@ -177,21 +170,12 @@ const Navbar:React.FC = () => {
                 
                 #MenuListContainer p {
                   position: relative;
+                  border-bottom: 3px solid transparent; 
                 }
                 
-                #MenuListContainer p::after {
-                  content: "";
-                  position: absolute;
-                  left: 0;
-                  bottom: 0;
-                  width: 0;
-                  height: 3px;
-                  background-color: #e5fcf5;
-                  transition: width 0.5s ease;
-                }
-                
-                #MenuListContainer p:hover::after {
-                  width: 100%;
+                #MenuListContainer p:hover {
+                  border-bottom: 3px solid #e5fcf5;
+                  transition: border-bottom 0.5s ease;
                 }
                 
                 .iconContainer {

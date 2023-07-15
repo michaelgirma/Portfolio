@@ -1,4 +1,4 @@
-"use client" 
+'use client' 
 import React from "react"
 
 const Hero:React.FC = () => {
@@ -12,14 +12,14 @@ const Hero:React.FC = () => {
       };
 
     return(
-        <div id="Hero" className="fade-in">
+        <div id="Hero" className="hello-world">
             <div id="HeroContainer">
                 <div id="TextContainer">
                     <div id="NameContainer">
-                        <h1 id="Name">Hello, I'm Michael</h1>
+                        <h1 id="Name">Hello, I&aposm Michael</h1>
                     </div>
                     <div id="DescriptionContainer">
-                        <p id="Description">I am a FullStack devloper who is currently enrolled at the University of Maryland, College Park.</p>
+                        <p id="Description">I&aposm a FullStack devloper who is currently enrolled at the University of Maryland, College Park.</p>
                     </div>
                     <div id="ArrowContainer">
                         <Animation/>
@@ -32,7 +32,7 @@ const Hero:React.FC = () => {
 
             <style>{`
                 #Hero{
-                    display:flex;
+                    display: flex;
                     position: relative;
                     flex-direction: column;
                     width: 90%;
@@ -43,14 +43,14 @@ const Hero:React.FC = () => {
                     border-radius: 20px;
                     margin-top: 20px;
                 }
-                .fade-in {
+                .hello-world {
                     opacity: 0;
-                    animation-name: fadeInAnimation;
+                    animation-name: helloInAnimation;
                     animation-duration: 2s;
                     animation-fill-mode: forwards;
                    }
                   
-                  @keyframes fadeInAnimation {
+                  @keyframes helloInAnimation {
                     from {
                       opacity: 0;
                     }
@@ -139,7 +139,6 @@ const Hero:React.FC = () => {
                       transform: translateY(0);
                     }
                   }
-
                 #ImageContainer{
                     display: flex;
                     position: relative;
@@ -173,15 +172,23 @@ const Hero:React.FC = () => {
 
                 }
                 @media (max-width: 700px){
+                    #Hero{
+                        height: 155vh;
+                    }
                     #HeroImage{
                         width: 380px;
                         height: 300px;
                     }
                     #TextContainer{
-                        padding-right: 110px;
+                        padding-right: 100px;
+                        width: 55%;
                     }
                     #DescriptionContainer{
                         padding-left: 35px;
+                    }
+                    #NameContainer{
+                        margin-right: 150px;
+                        
                     }
                     #ArrowContainer{
                         padding-left: 15px;
@@ -189,7 +196,10 @@ const Hero:React.FC = () => {
                 }
                 @media (max-width: 400px){
                     #TextContainer{
-                        padding-right: 160px;
+                        padding-right: 200px;
+                    }
+                    #NameContainer{
+                        margin-right: 40px;
                     }
                     #ImageContainer{
                         padding-right: 35px;
