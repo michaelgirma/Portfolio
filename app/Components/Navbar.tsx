@@ -1,4 +1,4 @@
-"use client" 
+'use client' 
 import React from "react"
 import { FaBars, FaTimes } from "react-icons/fa";
 import { useState } from "react"

@@ -1,4 +1,4 @@
-"use client" 
+'use client' 
 import React from "react"
 
 const Hero:React.FC = () => {
@@ -16,10 +16,10 @@ const Hero:React.FC = () => {
             <div id="HeroContainer">
                 <div id="TextContainer">
                     <div id="NameContainer">
-                        <h1 id="Name">Hello, I'm Michael</h1>
+                        <h1 id="Name">Hello, I&aposm Michael</h1>
                     </div>
                     <div id="DescriptionContainer">
-                        <p id="Description">I'm a FullStack devloper who is currently enrolled at the University of Maryland, College Park.</p>
+                        <p id="Description">I&aposm a FullStack devloper who is currently enrolled at the University of Maryland, College Park.</p>
                     </div>
                     <div id="ArrowContainer">
                         <Animation/>
@@ -32,7 +32,7 @@ const Hero:React.FC = () => {
 
             <style>{`
                 #Hero{
-                    display:flex;
+                    display: flex;
                     position: relative;
                     flex-direction: column;
                     width: 90%;
