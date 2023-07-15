@@ -7,7 +7,7 @@ import Contact from "./Components/Contact"
 
 export default function Home() {
   return (
-    <html>
+    
       <body>
         <Navbar/>
         <Hero/>
@@ -16,6 +16,6 @@ export default function Home() {
         <Projects/>
         <Contact/>
       </body>
-    </html>  
+     
   )
 }

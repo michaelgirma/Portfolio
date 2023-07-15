@@ -9,11 +9,11 @@ body{
 
 body::-webkit-scrollbar {
   width: 0.2em;
-  background-color: #F5F5F5;
+  background-color: #000080;
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: black;
+  background-color: #E5FCF5;
 }
 
 @font-face {
