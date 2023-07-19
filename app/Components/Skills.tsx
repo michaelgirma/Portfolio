@@ -2,38 +2,116 @@
 import React from "react"
 
 const Skills:React.FC = () => {
+    
+
     return(
+        <>
         <div id="Skills">
             <div id="SkillsContainer">
-                <div className="Skill">
-                    <div className="Outer">
-                        <div className="Inner">
-                            <div id="Number">65%</div>
+                <div id="TechnicalSkills">
+                    <div className="HeaderContainer">
+                        <h1 className="Header">Technical Skills</h1>
+                    </div>
+                    <div className="SkillBox">
+                        <span className="Title">HTML</span>
+                        <div className="SkillBar">
+                            <span className="SkillPer" id="SkillPerHtml">
+                                <span className="ToolTip">95%</span>
+                            </span>
                         </div>
                     </div>
+                    <div className="SkillBox">
+                        <span className="Title">CSS</span>
+                        <div className="SkillBar">
+                            <span className="SkillPer" id="SkillPerCSS">
+                                <span className="ToolTip">80%</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div className="SkillBox">
+                        <span className="Title">JavaScript</span>
+                        <div className="SkillBar">
+                            <span className="SkillPer" id="SkillPerJS">
+                                <span className="ToolTip">60%</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div className="SkillBox">
+                        <span className="Title">Node.JS</span>
+                        <div className="SkillBar">
+                            <span className="SkillPer" id="SkillPerNode">
+                                <span className="ToolTip">40%</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div className="SkillBox">
+                        <span className="Title">ReactJS</span>
+                        <div className="SkillBar">
+                            <span className="SkillPer" id="SkillPerReact">
+                                <span className="ToolTip">70%</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
 
-                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
-                        <defs>
-                            <linearGradient id="GradientColor">
-                            <stop offset="0%" stop-color="#E5FCF5" />
-                            <stop offset="100%" stop-color="#E5FCF5" />
-                            </linearGradient>
-                        </defs>
-                        <circle cx="80" cy="80" r="70" stroke-linecap="round" />
-                    </svg>
-
-                </div> 
+                <div id="ProfessionalSkills">
+                    <div className="HeaderContainer">
+                        <h1 className="Header">Professional Skills</h1>
+                    </div>
+                    <div className="SkillBox">
+                        <span className="Title">Communication</span>
+                        <div className="SkillBar">
+                            <span className="SkillPer" id="SkillPerComm">
+                                <span className="ToolTip">100%</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div className="SkillBox">
+                        <span className="Title">TeamWork</span>
+                        <div className="SkillBar">
+                            <span className="SkillPer" id="SkillPerTeam">
+                                <span className="ToolTip">100%</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div className="SkillBox">
+                        <span className="Title">Leadership</span>
+                        <div className="SkillBar">
+                            <span className="SkillPer" id="SkillPerLeader">
+                                <span className="ToolTip">100%</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div className="SkillBox">
+                        <span className="Title">Adaptability</span>
+                        <div className="SkillBar">
+                            <span className="SkillPer" id="SkillPerAdap">
+                                <span className="ToolTip">80%</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div className="SkillBox">
+                        <span className="Title">Problem Solving</span>
+                        <div className="SkillBar">
+                            <span className="SkillPer" id="SkillPerProb">
+                                <span className="ToolTip">95%</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
             </div>
-
+            
             <style>{`
             #Skills{
                 display: flex;
-                position: relative; 
+                position: relative;
                 width: 100%;
-                height: 65vh;
-                border-radius: 20px;
-                background: #000080;
-                margin-top: 10px;
+                height: 100vh;
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                justify-content: center;
+                align-items: center;
             }
             #SkillsContainer{
                 display: flex;
@@ -43,51 +121,160 @@ const Skills:React.FC = () => {
                 justify-content: center;
                 align-items: center;
             }
-            .Skill{
-                position: relative;
-                width: 160px;
-                height: 160px;
-                // background: white;
-            }
-            .Outer{
+            #TechnicalSkills{
                 display: flex;
+                flex-direction: column;
                 position: relative;
-                justify-content: center;
-                align-items: center;
-                height: 160px;
-                width: 160px;
-                border-radius: 50%;
-                padding: 10px;
-                box-shadow: 6px 6px 10px -1px rgba(0,0,0,0.15),
-                            -6px -6px 10px -1px rgba(255,255,255,0.7);
+                width: 500px;
+                height: 500px;
+                max-width: 500px;
+                margin: 0 15px;
+                padding: 10px 20px;
+                border: 1px solid #00FFFF;
+                border-radius: 7px;
             }
-            .Inner{
-                display: flex;
+            .HeaderContainer{
+                text-align: center;
+                background-color: #00FFFF;
+                color: #343434;
+                font-weight: 400;
+                font-size: 14px;
+                border-radius: 50px;
+                margin-top: 15px;
+                margin-bottom: 30px;
+                padding: 0 20px 0 20px;
+            }
+            .SkillBox{
+                width: 100%;
+                margin: 18px 0;
+            }
+            .Title{
+                display: block;
+                font-size: 14px;
+                font-weight: 600;
+                color: #00FFFF;
+            }
+            .SkillBar{
+                height: 8px;
+                width: 100%;
+                border-radius: 6px;
+                margin-top: 6px;
+                background: rgba(0,0,0,0.1);
+            }
+            .SkillPer{
                 position: relative;
-                height: 120px;
-                width: 120px;
-                border-radius: 50%;
-                justify-content: center;
-                align-items: center;
-                box-shadow: inset 4px 4px 6px -1px rgba(0,0,0,0.2),
-                                inset -4px -4px 6px -1px rgba(255,255,255,0.7),
-                                -0.5px -0.5px 0px rgba(255,255,255,1),
-                                0.5px 0.5px 0px rgba(0,0,0,0.15),
-                                0px 12px 10px -10px rgba(0,0,0,0.05);
+                display: block;
+                height: 100%;
+                width: 95%;
+                border-radius: 6px;
+                background: #00FFFF;
+                animation: progress 0.4s ease-in-out forwards;
+                opacity: 0;
             }
-            #Number{
-               font-weight: 600px;
-               color: #555;    
+            #SkillPerHtml{
+                width: 95%;
+                animation-delay: 0.1s;
             }
-            circle{
-                fill: none;
-                stroke: url(#GradientColor);
-                stroke-width: 20px;
+            #SkillPerCSS{
+                width: 80%;
+                animation-delay: 0.2s;
+            }
+            #SkillPerJS{
+                width: 60%;
+                animation-delay: 0.3s;
+            }
+            #SkillPerNode{
+                width: 40%;
+                animation-delay: 0.4s;
+            }
+            #SkillPerReact{
+                width: 70%;
+                animation-delay: 0.5s;
+            }
+            @keyframes progress {
+                0%{
+                    width: 0;
+                    opacity: 1;
+                }
 
+                100%{
+                    opacity: 1;
+                }
+            }
+            .ToolTip{
+                position: absolute;
+                right: -14px;
+                top: -28px;
+                font-size: 9px;
+                font-weight: 500;
+                color: #343434;
+                padding: 2px 6px;
+                border-radius: 3px;
+                background: #00FFFF;
+                z-index: 1;
+            }
+            .ToolTip::before {
+                position: absolute;
+                left: 50%;
+                bottom: -2px;
+                width: 10px;
+                height: 10px;
+                z-index: -1;
+                background-color: #00FFFF;
+                transform: translateX(-50%) rotate(45deg);
+            }
+            #ProfessionalSkills{
+                display: flex;
+                flex-direction: column;
+                position: relative;
+                width: 500px;
+                height: 500px;
+                max-width: 500px;
+                margin: 0 15px;
+                padding: 10px 20px;
+                border: 1px solid #00FFFF;
+                border-radius: 7px;
+            }
+            #SkillPerComm{
+                width: 100%;
+                animation-delay: 0.1s;
+            }
+            #SkillPerTeam{
+                width: 100%;
+                animation-delay: 0.2s;
+            }
+            #SkillPerLeader{
+                width: 100%;
+                animation-delay: 0.3s;
+            }
+            #SkillPerAdap{
+                width: 80%;
+                animation-delay: 0.4s;
+            }
+            #SkillPerProb{
+                width: 95%;
+                animation-delay: 0.5s;
+            }
+            @media (max-width: 700px){
+                #Skills{
+                    height: 150vh;
+                }
+                #SkillsContainer{
+                    flex-direction: column;
+                    justify-content: space-around;
+                }
+                #TechnicalSkills{
+                    width: 300px;
+                }
+                #ProfessionalSkills{
+                    width: 300px;
+                }
             }
             `}</style>
         </div>
-    )
+        </>
+        )
+    
     
 }
 

@@ -12,27 +12,29 @@ const Navbar:React.FC = () => {
   
 
     return(
+      <>
         <div id="Navbar" className="fade-in">
             <div id="NavbarContainer">
-                  <div id="LogoContainer">
-                    <p id="Logo">Logo</p>
-                  </div>                
-                  <div id="MenuContainer">
-                    <div id="MenuListContainer" className={isMenuOpen ? "open" : ""}>
-                        <p className="style" id="NavSkills">Skills</p>
-                        <p className="style" id="NavExperience">Experience</p>
-                        <p className="style" id="NavProject">Projects</p>
-                        <p className="style" id="NavContact">Contacts</p>
-                    </div>
-                    <div className="iconContainer" onClick={handleMenuToggle}>
-                      {isMenuOpen ? (
-                        <FaTimes className="icon" />
-                      ) : (
-                        <FaBars className="icon" />
-                      )}
-                    </div>
-                  </div>
+              <div id="LogoContainer">
+                <p id="Logo">Logo</p>
+              </div>                
+              <div id="MenuContainer">
+                <div id="MenuListContainer" className={isMenuOpen ? "open" : ""}>
+                    <p className="style" id="NavSkills">Skills</p>
+                    <p className="style" id="NavExperience">Experience</p>
+                    <p className="style" id="NavProject">Projects</p>
+                    <p className="style" id="NavContact">Contacts</p>
                 </div>
+                <div className="iconContainer" onClick={handleMenuToggle}>
+                  {isMenuOpen ? (
+                    <FaTimes className="icon" />
+                  ) : (
+                    <FaBars className="icon" />
+                  )}
+                </div>
+              </div>
+            </div>
+            <div id="LineContainer"></div>
             <style>{`
                #Navbar{
                     display:flex;
@@ -40,7 +42,7 @@ const Navbar:React.FC = () => {
                     width: 100%;
                     height: 13vh;
                     flex-direction: column;
-                    background-color: #000080;
+                    background-color: #343434;
                     border-bottom-left-radius: 30px;
                     border-bottom-right-radius: 30px;
                     z-index: 9999;
@@ -84,7 +86,7 @@ const Navbar:React.FC = () => {
                     justify-content: flex-start;
                     align-items: center;
                     font-size: 48px;
-                    color: white;
+                    color: #00FFFF;
                     padding-left: 35px;
                }
                #MenuContainer{
@@ -109,11 +111,12 @@ const Navbar:React.FC = () => {
               #MenuListContainer p {
                 position: relative;
                 border-bottom: 3px solid transparent; 
+                color: #00FFFF;
 
               }
               
               #MenuListContainer p:hover {
-                border-bottom: 2px solid #E5FCF5;
+                border-bottom: 2px solid #00FFFF;
                 transition: border-bottom 0.3s ;
               }
 
@@ -122,6 +125,14 @@ const Navbar:React.FC = () => {
               }
               .style{
                 font-family: Inter;
+              }
+
+              #LineContainer{
+                display: flex;
+                position: relative;
+                flex-direction: column;
+                border: 1px solid #00FFFF;
+                width: 100%;
               }
               
               @media (max-width: 700px) {
@@ -148,10 +159,12 @@ const Navbar:React.FC = () => {
                   align-items: center;
                   padding-top: 50px;
                   padding-bottom: 50px;
-                  margin-top: 40px;
+                  padding-left: 10px;
+                  margin-top: 0px;
                   color: white;
                   font-size: 18px;
-                  background-color: #000080;
+                  background-color: #343434;
+                  border: 1px solid #00FFFF;
                   border-bottom-left-radius: 30px;
                   border-bottom-right-radius: 30px;
                   animation-name: slideDownAnimation;
@@ -174,7 +187,7 @@ const Navbar:React.FC = () => {
                 }
                 
                 #MenuListContainer p:hover {
-                  border-bottom: 3px solid #e5fcf5;
+                  border-bottom: 3px solid #00FFFF;
                   transition: border-bottom 0.5s ease;
                 }
                 
@@ -185,20 +198,25 @@ const Navbar:React.FC = () => {
                   align-items: center;
                   width: 50px;
                   height: 30px;
-                  padding-top: 32px;
-                  color: white;
+                  margin-top: 20px;
+                  padding-left: 10px;
+                  color: #00FFFF;
                   
                 }
                 .icon{
                   width: 100px;
                   height: 35px;
                 }
+                #LineContainer{
+                  display: none;
+                }
               }
               
             `}
             </style>
         </div>
-      );
+        </>
+        );
 
 };
 
