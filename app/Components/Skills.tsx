@@ -1,5 +1,14 @@
 'use client' 
 import React from "react"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faReact } from '@fortawesome/free-brands-svg-icons';
+import { faAngular } from '@fortawesome/free-brands-svg-icons';
+import { faJsSquare } from '@fortawesome/free-brands-svg-icons';
+import { faHtml5 } from '@fortawesome/free-brands-svg-icons';
+import { faNodeJs } from '@fortawesome/free-brands-svg-icons';
+import { faPython } from '@fortawesome/free-brands-svg-icons';
+import { faGithubSquare } from '@fortawesome/free-brands-svg-icons';
+import '@fortawesome/fontawesome-svg-core/styles.css';
 
 const Skills:React.FC = () => {
     
@@ -11,91 +20,79 @@ const Skills:React.FC = () => {
                 <div id="TechnicalSkills">
                     <div className="HeaderContainer">
                         <h1 className="Header">Technical Skills</h1>
-                    </div>
+                    </div>  
                     <div className="SkillBox">
-                        <span className="Title">HTML</span>
+                        <div className="SubTitleContainer">
+                            <span className="SubTitle">Front-End Development</span>
+                        </div> 
+                        <span className="Title">React, Angular, Next.js, TypeScript, JavaScript, HTML, CSS</span>
                         <div className="SkillBar">
-                            <span className="SkillPer" id="SkillPerHtml">
-                                <span className="ToolTip">95%</span>
-                            </span>
+                            <span className="SkillPer" id="SkillPerHtml"></span>
+                            <div className="ImageAContainer">
+                                <div className="ImageContainer">
+                                    <div className="IconContainer">
+                                        <FontAwesomeIcon className="Icon" icon={faReact}/>
+                                    </div>
+                                    <div className="IconContainer">
+                                        <FontAwesomeIcon className="Icon"  icon={faAngular} />
+                                    </div>
+                                    <div className="IconContainer">
+                                        <FontAwesomeIcon className="Icon" icon={faJsSquare} />                                    
+                                    </div>
+                                    <div className="IconContainer">
+                                        <FontAwesomeIcon className="Icon" icon={faHtml5} />                                    
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div className="SkillBox">
-                        <span className="Title">CSS</span>
+                        <div className="SubTitleContainer">
+                            <span className="SubTitle">Back-End Development</span>
+                        </div>
+                        <span className="Title">Python, Firebase, MongoDB, Supabase, Node.js, Express.js, Axios</span>
                         <div className="SkillBar">
-                            <span className="SkillPer" id="SkillPerCSS">
-                                <span className="ToolTip">80%</span>
-                            </span>
+                            <span className="SkillPer" id="SkillPerCSS"></span>
+                            <div className="ImageAContainer">
+                                <div className="ImageContainer">
+                                    <div className="IconContainer">
+                                        <FontAwesomeIcon className="Icon" icon={faPython} />
+                                    </div>
+                                    <div className="IconContainer">
+                                            <FontAwesomeIcon className="Icon" icon={faNodeJs} />
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div className="SkillBox">
-                        <span className="Title">JavaScript</span>
-                        <div className="SkillBar">
-                            <span className="SkillPer" id="SkillPerJS">
-                                <span className="ToolTip">60%</span>
-                            </span>
+                        <div className="SubTitleContainer">
+                            <span className="SubTitle">App Development</span>
                         </div>
-                    </div>
-                    <div className="SkillBox">
-                        <span className="Title">Node.JS</span>
+                        <span className="Title">React Native, Expo </span>
                         <div className="SkillBar">
-                            <span className="SkillPer" id="SkillPerNode">
-                                <span className="ToolTip">40%</span>
-                            </span>
-                        </div>
-                    </div>
-                    <div className="SkillBox">
-                        <span className="Title">ReactJS</span>
-                        <div className="SkillBar">
-                            <span className="SkillPer" id="SkillPerReact">
-                                <span className="ToolTip">70%</span>
-                            </span>
-                        </div>
-                    </div>
-                </div>
+                            <span className="SkillPer" id="SkillPerJS"></span>
+                            <div className="ImageAContainer">
+                                <div className="ImageContainer">
 
-                <div id="ProfessionalSkills">
-                    <div className="HeaderContainer">
-                        <h1 className="Header">Professional Skills</h1>
-                    </div>
-                    <div className="SkillBox">
-                        <span className="Title">Communication</span>
-                        <div className="SkillBar">
-                            <span className="SkillPer" id="SkillPerComm">
-                                <span className="ToolTip">100%</span>
-                            </span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div className="SkillBox">
-                        <span className="Title">TeamWork</span>
-                        <div className="SkillBar">
-                            <span className="SkillPer" id="SkillPerTeam">
-                                <span className="ToolTip">100%</span>
-                            </span>
+                        <div className="SubTitleContainer">
+                            <span className="SubTitle">Miscellaneous</span>
                         </div>
-                    </div>
-                    <div className="SkillBox">
-                        <span className="Title">Leadership</span>
+                        <span className="Title">Google Cloud Platform, Vercel, Bash, Git/GitHub</span>
                         <div className="SkillBar">
-                            <span className="SkillPer" id="SkillPerLeader">
-                                <span className="ToolTip">100%</span>
-                            </span>
-                        </div>
-                    </div>
-                    <div className="SkillBox">
-                        <span className="Title">Adaptability</span>
-                        <div className="SkillBar">
-                            <span className="SkillPer" id="SkillPerAdap">
-                                <span className="ToolTip">80%</span>
-                            </span>
-                        </div>
-                    </div>
-                    <div className="SkillBox">
-                        <span className="Title">Problem Solving</span>
-                        <div className="SkillBar">
-                            <span className="SkillPer" id="SkillPerProb">
-                                <span className="ToolTip">95%</span>
-                            </span>
+                            <span className="SkillPer" id="SkillPerNode"></span>
+                            <div className="ImageAContainer">
+                                <div className="ImageContainer">
+                                    <div className="IconContainer">
+                                        <FontAwesomeIcon className="Icon" icon={faGithubSquare}/>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -106,7 +103,7 @@ const Skills:React.FC = () => {
                 display: flex;
                 position: relative;
                 width: 100%;
-                height: 100vh;
+                height: 120vh;
                 margin: 0;
                 padding: 0;
                 box-sizing: border-box;
@@ -115,6 +112,7 @@ const Skills:React.FC = () => {
             }
             #SkillsContainer{
                 display: flex;
+                flex-direction: column;
                 position: relative;
                 width: 100%;
                 height: 100%;
@@ -125,9 +123,8 @@ const Skills:React.FC = () => {
                 display: flex;
                 flex-direction: column;
                 position: relative;
-                width: 500px;
-                height: 500px;
-                max-width: 500px;
+                width: 700px;
+                height: 850px;
                 margin: 0 15px;
                 padding: 10px 20px;
                 border: 1px solid #00FFFF;
@@ -144,15 +141,42 @@ const Skills:React.FC = () => {
                 margin-bottom: 30px;
                 padding: 0 20px 0 20px;
             }
-            .SkillBox{
+            .SubTitleContainer{
+                display: flex;
+                position: relative;
                 width: 100%;
-                margin: 18px 0;
+                justify-content: center;
+                align-items: center;
+            }
+            .SubTitle{
+                display: flex;
+                position: relative;
+                width: 300px;
+                height: 30px;
+                justify-content: center;
+                align-items: center;
+                background-color: #00FFFF;
+                border-radius: 20px;
+                color: #343434;
+                font-family: InterBold;
+            }
+            .SkillBox{
+                display: flex;
+                position: relative;
+                width: 100%;
+                margin: 50px 0;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
             }
             .Title{
-                display: block;
-                font-size: 14px;
+                display: flex;
+                position: relative;
+                font-size: 17px;
                 font-weight: 600;
                 color: #00FFFF;
+                justify-content: center;
+                align-items: center;
             }
             .SkillBar{
                 height: 8px;
@@ -172,24 +196,24 @@ const Skills:React.FC = () => {
                 opacity: 0;
             }
             #SkillPerHtml{
-                width: 95%;
-                animation-delay: 0.1s;
-            }
-            #SkillPerCSS{
-                width: 80%;
+                width: 100%;
                 animation-delay: 0.2s;
             }
-            #SkillPerJS{
-                width: 60%;
-                animation-delay: 0.3s;
-            }
-            #SkillPerNode{
-                width: 40%;
+            #SkillPerCSS{
+                width: 100%;
                 animation-delay: 0.4s;
             }
+            #SkillPerJS{
+                width: 100%;
+                animation-delay: 0.6s;
+            }
+            #SkillPerNode{
+                width: 100%;
+                animation-delay: 0.8s;
+            }
             #SkillPerReact{
-                width: 70%;
-                animation-delay: 0.5s;
+                width: 100%;
+                animation-delay: 1s;
             }
             @keyframes progress {
                 0%{
@@ -201,60 +225,32 @@ const Skills:React.FC = () => {
                     opacity: 1;
                 }
             }
-            .ToolTip{
-                position: absolute;
-                right: -14px;
-                top: -28px;
-                font-size: 9px;
-                font-weight: 500;
-                color: #343434;
-                padding: 2px 6px;
-                border-radius: 3px;
-                background: #00FFFF;
-                z-index: 1;
-            }
-            .ToolTip::before {
-                position: absolute;
-                left: 50%;
-                bottom: -2px;
-                width: 10px;
-                height: 10px;
-                z-index: -1;
-                background-color: #00FFFF;
-                transform: translateX(-50%) rotate(45deg);
-            }
-            #ProfessionalSkills{
+            .ImageAContainer{
                 display: flex;
-                flex-direction: column;
                 position: relative;
-                width: 500px;
-                height: 500px;
-                max-width: 500px;
-                margin: 0 15px;
-                padding: 10px 20px;
-                border: 1px solid #00FFFF;
-                border-radius: 7px;
-            }
-            #SkillPerComm{
                 width: 100%;
-                animation-delay: 0.1s;
+                height: 80px;
+                justify-content: center;
+                align-items: center;
             }
-            #SkillPerTeam{
-                width: 100%;
-                animation-delay: 0.2s;
-            }
-            #SkillPerLeader{
-                width: 100%;
-                animation-delay: 0.3s;
-            }
-            #SkillPerAdap{
+            .ImageContainer{
+                display: flex;
+                position: relative;
                 width: 80%;
-                animation-delay: 0.4s;
+                height: 80px;
+                margin-top: 10px;
+                justify-content: space-around;
             }
-            #SkillPerProb{
-                width: 95%;
-                animation-delay: 0.5s;
+            .IconContainer{
+                display: flex;
+                position: relative;
             }
+            .Icon{
+                width: 80px;
+                height: 80px;
+                color: #00FFFF;
+            }
+
             @media (max-width: 700px){
                 #Skills{
                     height: 150vh;
@@ -264,10 +260,35 @@ const Skills:React.FC = () => {
                     justify-content: space-around;
                 }
                 #TechnicalSkills{
-                    width: 300px;
+                    width: 500px;
                 }
-                #ProfessionalSkills{
-                    width: 300px;
+                .Title{
+                    font-size: 13px;
+                }
+                .Icon{
+                    width: 60px;
+                    height: 60px;
+
+                }
+            }
+            @media(max-width: 600px){
+                #TechnicalSkills{
+                    width: 400px;
+                }
+                .Title{
+                    font-size: 12px;
+                }
+                .Icon{
+                    width: 40px;
+                    height: 40px;
+
+                }
+                .SubTitleContainer{
+                    width: 80%;
+
+                }
+                .SubTitle{
+                    font-size: 12px;
                 }
             }
             `}</style>
