@@ -42,7 +42,7 @@ const Hero:React.FC = () => {
                     margin-left: auto;
                     margin-right: auto;
                     border-radius: 20px;
-                    margin-top: 20px;
+                    margin-top: 80px;
                 }
                 .hello-world {
                     opacity: 0;

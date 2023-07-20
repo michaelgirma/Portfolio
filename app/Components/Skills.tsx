@@ -10,12 +10,14 @@ import { faPython } from '@fortawesome/free-brands-svg-icons';
 import { faGithubSquare } from '@fortawesome/free-brands-svg-icons';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 
+
+
+
 const Skills:React.FC = () => {
-    
 
     return(
         <>
-        <div id="Skills">
+        <div id="Skills" className="fade-in">
             <div id="SkillsContainer">
                 <div id="TechnicalSkills">
                     <div className="HeaderContainer">
@@ -72,11 +74,11 @@ const Skills:React.FC = () => {
                         <span className="Title">React Native, Expo </span>
                         <div className="SkillBar">
                             <span className="SkillPer" id="SkillPerJS"></span>
-                            <div className="ImageAContainer">
-                                <div className="ImageContainer">
+                                <div className="ImageAContainer">
+                                    <div className="ImageContainer">
 
+                                    </div>
                                 </div>
-                            </div>
                         </div>
                     </div>
                     <div className="SkillBox">
@@ -104,11 +106,26 @@ const Skills:React.FC = () => {
                 position: relative;
                 width: 100%;
                 height: 120vh;
-                margin: 0;
+                margin-top: 60px;
                 padding: 0;
                 box-sizing: border-box;
                 justify-content: center;
                 align-items: center;
+            }
+            .fade-in {
+                opacity: 0;
+                animation-name: fadeInAnimation;
+                animation-duration: 2s;
+                animation-fill-mode: forwards;
+               }
+              
+              @keyframes fadeInAnimation {
+                from {
+                  opacity: 0;
+                }
+                to {
+                  opacity: 1;
+                }
             }
             #SkillsContainer{
                 display: flex;
@@ -124,7 +141,7 @@ const Skills:React.FC = () => {
                 flex-direction: column;
                 position: relative;
                 width: 700px;
-                height: 850px;
+                height: 800px;
                 margin: 0 15px;
                 padding: 10px 20px;
                 border: 1px solid #00FFFF;
@@ -188,42 +205,37 @@ const Skills:React.FC = () => {
             .SkillPer{
                 position: relative;
                 display: block;
-                height: 100%;
-                width: 95%;
+                height: 50%;
+                width: 50%;
                 border-radius: 6px;
                 background: #00FFFF;
-                animation: progress 0.4s ease-in-out forwards;
-                opacity: 0;
+                animation: bounce 10s infinite ease-in-out;
+            }
+            @keyframes bounce {
+                0%, 100% {
+                    left: 0;
+                  }
+                  25% {
+                    left: 50%;
+                  }
+                  50% {
+                    left: 0%;
+                  }
+                  75% {
+                    left: 50%;
+                  }
             }
             #SkillPerHtml{
-                width: 100%;
                 animation-delay: 0.2s;
             }
             #SkillPerCSS{
-                width: 100%;
-                animation-delay: 0.4s;
+                animation-delay: 2.6s;
             }
             #SkillPerJS{
-                width: 100%;
-                animation-delay: 0.6s;
+                animation-delay: 5s;
             }
             #SkillPerNode{
-                width: 100%;
-                animation-delay: 0.8s;
-            }
-            #SkillPerReact{
-                width: 100%;
-                animation-delay: 1s;
-            }
-            @keyframes progress {
-                0%{
-                    width: 0;
-                    opacity: 1;
-                }
-
-                100%{
-                    opacity: 1;
-                }
+                animation-delay: 7.4s;
             }
             .ImageAContainer{
                 display: flex;

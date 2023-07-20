@@ -15,12 +15,10 @@ const Navbar:React.FC = () => {
     return(
       <>
         <div id="Navbar" className="fade-in">
-            <div id="NavbarContainer">
-              <div id="LogoContainer">
-                <p id="Logo">Logo</p>
-              </div>                
+            <div id="NavbarContainer">               
               <div id="MenuContainer">
                 <div id="MenuListContainer" className={isMenuOpen ? "open" : ""}>
+                    <p className="style" id="NavHome">Home</p>
                     <p className="style" id="NavSkills">Skills</p>
                     <p className="style" id="NavExperience">Experience</p>
                     <p className="style" id="NavProject">Projects</p>
@@ -35,11 +33,15 @@ const Navbar:React.FC = () => {
                 </div>
               </div>
             </div>
-            <div id="LineContainer"></div>
+            <div id="LineContainer">
+              <div className="GrowingDiv"></div>
+            </div>
             <style>{`
                #Navbar{
                     display:flex;
-                    position: relative;
+                    position: fixed;
+                    top: 0;
+                    left: 0;
                     width: 100%;
                     height: 13vh;
                     flex-direction: column;
@@ -70,6 +72,7 @@ const Navbar:React.FC = () => {
                     height: 12vh;
                     flex-direction: row;
                     justify-content: space-around;
+                    align-items: center;
                }
                #LogoContainer{
                     display: flex;
@@ -132,8 +135,28 @@ const Navbar:React.FC = () => {
                 display: flex;
                 position: relative;
                 flex-direction: column;
-                border: 1px solid #00FFFF;
                 width: 100%;
+                height: 5px;
+                border-radius: 5px;
+                background: rgba(0,0,0,0.1);
+              }
+              .GrowingDiv {
+                width: 100%;
+                height: 5px;
+                border-radius: 5px;
+                background-color: #00FFFF;
+                position: relative;
+                animation: growAnimation 10s infinite;
+                transform-origin: center;
+              }
+              
+              @keyframes growAnimation {
+                0%, 100% {
+                  transform: scaleX(0); 
+                }
+                50% {
+                  transform: scaleX(1);
+                }
               }
               
               @media (max-width: 700px) {
