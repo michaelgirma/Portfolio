@@ -36,11 +36,9 @@ const Hero:React.FC = () => {
                     display: flex;
                     position: relative;
                     flex-direction: column;
-                    width: 90%;
+                    width: 100vw;
                     height: 70vh;
                     background-color: #343434;
-                    margin-left: auto;
-                    margin-right: auto;
                     border-radius: 20px;
                     margin-top: 80px;
                 }
@@ -62,21 +60,25 @@ const Hero:React.FC = () => {
                 #HeroContainer{
                     display: flex;
                     position: relative;
+                    flex-direction: row;
                     width: 100%;
                     height: 100%;
+                    justify-content: space-around;
                 }
                 #TextContainer{
                     display: flex;
                     position: relative;
                     width: 60%;
                     height: 80%;
-                    padding-left: 20px;
-                    padding-top: 70px;
                     flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
                 }
                 #NameContainer{
                     display: flex;
                     position: relative;
+                    justify-content: center;
+                    align-items: center;
                     width: 60%;
                 }
                 #Name{
@@ -92,7 +94,7 @@ const Hero:React.FC = () => {
                     position: relative;
                     width: 60%;
                     justify-content: center;
-                    text-align: center;
+                    align-items: center;
                     padding-left: 5px;
                 }
                 #Description{
@@ -101,6 +103,7 @@ const Hero:React.FC = () => {
                     color: #00FFFF;
                     font-family: Inter;
                     font-size: 20px;
+                    text-align: center;
                 }
                 #ArrowContainer{
                     display: flex;
@@ -115,7 +118,6 @@ const Hero:React.FC = () => {
                     align-items: center;
                     justify-content: center;
                     margin-top: 10px;
-                    margin-left: 60px;
                     animation: arrow-bounce 1s infinite;
                   }
           
@@ -146,14 +148,13 @@ const Hero:React.FC = () => {
                     width: 40%;
                     height: 100%;
                     justify-content: center;
-                    padding-right: 5%;
                     align-items: center;
                 }
                 #HeroImage{
                     display: flex;
                     position: relative;
-                    width: 470px;
-                    height: 400px;
+                    width: 60%;
+                    height: 50%;
                     border-radius: 20px;
                 }
                 
@@ -165,57 +166,12 @@ const Hero:React.FC = () => {
                         justify-content: center;
                         align-items: center;
                         flex-direction: column;
-                        padding-left: 16.55px; 
                     }
-                    #TextContainer{
-                        padding-left: 120px;
+                    #HeroImage{
+                        width: 200%;
                     }
+                }
 
-                }
-                @media (max-width: 700px){
-                    #Hero{
-                        height: 155vh;
-                    }
-                    #HeroImage{
-                        width: 380px;
-                        height: 300px;
-                    }
-                    #TextContainer{
-                        padding-right: 100px;
-                        width: 55%;
-                    }
-                    #DescriptionContainer{
-                        padding-left: 35px;
-                    }
-                    #NameContainer{
-                        margin-right: 150px;
-                        
-                    }
-                    #ArrowContainer{
-                        padding-left: 15px;
-                    }
-                }
-                @media (max-width: 400px){
-                    #TextContainer{
-                        padding-right: 200px;
-                    }
-                    #NameContainer{
-                        margin-right: 40px;
-                    }
-                    #ImageContainer{
-                        padding-right: 35px;
-                    }
-                    #DescriptionContainer{
-                        padding-left: 50px;
-                    }
-                    #ArrowContainer{
-                        padding-left: 30px;
-                    }
-                    #HeroImage{
-                        width: 350px;
-                        height: 250px;
-                    }
-                }
             `}</style>
         </div>
         </>

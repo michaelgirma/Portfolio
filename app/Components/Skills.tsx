@@ -8,6 +8,14 @@ import { faHtml5 } from '@fortawesome/free-brands-svg-icons';
 import { faNodeJs } from '@fortawesome/free-brands-svg-icons';
 import { faPython } from '@fortawesome/free-brands-svg-icons';
 import { faGithubSquare } from '@fortawesome/free-brands-svg-icons';
+import {BiLogoTypescript} from 'react-icons/bi'
+import {TbBrandNextjs} from 'react-icons/Tb'
+import {BsFiletypeCss} from 'react-icons/Bs'
+import {BiLogoFirebase} from 'react-icons/bi'
+import {BiLogoMongodb} from 'react-icons/bi'
+import {RiSupabaseFill} from 'react-icons/ri'
+import {SiAxios} from 'react-icons/si'
+import {SiVercel} from 'react-icons/si'
 import '@fortawesome/fontawesome-svg-core/styles.css';
 
 
@@ -38,12 +46,15 @@ const Skills:React.FC = () => {
                                     <div className="IconContainer">
                                         <FontAwesomeIcon className="Icon"  icon={faAngular} />
                                     </div>
+                                    <TbBrandNextjs className="Icon"/>
+                                    <BiLogoTypescript className="Icon"/>
                                     <div className="IconContainer">
                                         <FontAwesomeIcon className="Icon" icon={faJsSquare} />                                    
                                     </div>
                                     <div className="IconContainer">
                                         <FontAwesomeIcon className="Icon" icon={faHtml5} />                                    
                                     </div>
+                                    <BsFiletypeCss className="Icon" />
                                 </div>
                             </div>
                         </div>
@@ -60,25 +71,15 @@ const Skills:React.FC = () => {
                                     <div className="IconContainer">
                                         <FontAwesomeIcon className="Icon" icon={faPython} />
                                     </div>
+                                    <BiLogoFirebase className="Icon"/>
+                                    <BiLogoMongodb className="Icon"/>
+                                    <RiSupabaseFill className="Icon"/>
                                     <div className="IconContainer">
                                             <FontAwesomeIcon className="Icon" icon={faNodeJs} />
                                     </div>
+                                    <SiAxios className="Icon"/>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div className="SkillBox">
-                        <div className="SubTitleContainer">
-                            <span className="SubTitle">App Development</span>
-                        </div>
-                        <span className="Title">React Native, Expo </span>
-                        <div className="SkillBar">
-                            <span className="SkillPer" id="SkillPerJS"></span>
-                                <div className="ImageAContainer">
-                                    <div className="ImageContainer">
-
-                                    </div>
-                                </div>
                         </div>
                     </div>
                     <div className="SkillBox">
@@ -90,6 +91,7 @@ const Skills:React.FC = () => {
                             <span className="SkillPer" id="SkillPerNode"></span>
                             <div className="ImageAContainer">
                                 <div className="ImageContainer">
+                                    <SiVercel className="Icon" />
                                     <div className="IconContainer">
                                         <FontAwesomeIcon className="Icon" icon={faGithubSquare}/>
                                     </div>
@@ -107,7 +109,6 @@ const Skills:React.FC = () => {
                 width: 100%;
                 height: 120vh;
                 margin-top: 60px;
-                padding: 0;
                 box-sizing: border-box;
                 justify-content: center;
                 align-items: center;
@@ -140,15 +141,20 @@ const Skills:React.FC = () => {
                 display: flex;
                 flex-direction: column;
                 position: relative;
-                width: 700px;
-                height: 800px;
-                margin: 0 15px;
-                padding: 10px 20px;
+                width: 80%;
+                height: 75%;
                 border: 1px solid #00FFFF;
                 border-radius: 7px;
             }
             .HeaderContainer{
+                display: flex;
+                position: relative;
+                justify-content: center;
+                align-items: center;
                 text-align: center;
+                width: 90%;
+                margin-left: auto;
+                margin-right: auto;
                 background-color: #00FFFF;
                 color: #343434;
                 font-weight: 400;
@@ -157,6 +163,10 @@ const Skills:React.FC = () => {
                 margin-top: 15px;
                 margin-bottom: 30px;
                 padding: 0 20px 0 20px;
+            }
+            .Header{
+                display: flex;
+                position: relative;
             }
             .SubTitleContainer{
                 display: flex;
@@ -198,7 +208,6 @@ const Skills:React.FC = () => {
             .SkillBar{
                 height: 8px;
                 width: 100%;
-                border-radius: 6px;
                 margin-top: 6px;
                 background: rgba(0,0,0,0.1);
             }
@@ -207,35 +216,19 @@ const Skills:React.FC = () => {
                 display: block;
                 height: 50%;
                 width: 50%;
-                border-radius: 6px;
                 background: #00FFFF;
-                animation: bounce 10s infinite ease-in-out;
-            }
-            @keyframes bounce {
-                0%, 100% {
-                    left: 0;
-                  }
-                  25% {
-                    left: 50%;
-                  }
-                  50% {
-                    left: 0%;
-                  }
-                  75% {
-                    left: 50%;
-                  }
             }
             #SkillPerHtml{
-                animation-delay: 0.2s;
+                width: 100%;
             }
             #SkillPerCSS{
-                animation-delay: 2.6s;
+                width: 100%;
             }
             #SkillPerJS{
-                animation-delay: 5s;
+                width: 100%;           
             }
             #SkillPerNode{
-                animation-delay: 7.4s;
+                width: 100%;
             }
             .ImageAContainer{
                 display: flex;
@@ -256,13 +249,18 @@ const Skills:React.FC = () => {
             .IconContainer{
                 display: flex;
                 position: relative;
+                justify-content: center;
+                align-items: center;
             }
             .Icon{
                 width: 80px;
                 height: 80px;
                 color: #00FFFF;
+                transition: transform 0.3s;
             }
-
+            .Icon:hover {
+                transform: scale(1.2); 
+            }
             @media (max-width: 700px){
                 #Skills{
                     height: 150vh;
@@ -272,20 +270,24 @@ const Skills:React.FC = () => {
                     justify-content: space-around;
                 }
                 #TechnicalSkills{
-                    width: 500px;
+                    width: 90%;
+                    height: 55%;
                 }
                 .Title{
                     font-size: 13px;
                 }
                 .Icon{
-                    width: 60px;
-                    height: 60px;
+                    width: 50px;
+                    height: 50px;
 
                 }
             }
             @media(max-width: 600px){
-                #TechnicalSkills{
-                    width: 400px;
+                #Skills{
+                    margin-top: 0px;
+                }
+                #SkillsContainer{
+                    margin-top: 0px;
                 }
                 .Title{
                     font-size: 12px;
@@ -301,6 +303,9 @@ const Skills:React.FC = () => {
                 }
                 .SubTitle{
                     font-size: 12px;
+                }
+                .ImageContainer{
+                    align-items: center;
                 }
             }
             `}</style>
