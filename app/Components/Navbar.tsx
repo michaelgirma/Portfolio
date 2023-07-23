@@ -1,15 +1,31 @@
 'use client' 
 import React from "react"
 import { FaBars, FaTimes } from "react-icons/fa";
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 
 const Navbar:React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrollWidth, setScrollWidth] = useState('0%');
+
   
   const handleMenuToggle = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  const handleScroll = () => {
+    const scrollPosition = window.pageYOffset;
+    const totalHeight = document.body.scrollHeight - window.innerHeight;
+    const scrollPercentage = (scrollPosition / totalHeight) * 100;
+    setScrollWidth(`${scrollPercentage}%`);
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
   
 
     return(
@@ -34,7 +50,7 @@ const Navbar:React.FC = () => {
               </div>
             </div>
             <div id="LineContainer">
-              <div className="GrowingDiv"></div>
+              <div className="GrowingDiv" style={{width: scrollWidth}}></div>
             </div>
             <style>{`
                #Navbar{
@@ -116,12 +132,16 @@ const Navbar:React.FC = () => {
                 position: relative;
                 border-bottom: 3px solid transparent; 
                 color: #00FFFF;
+                padding: 5px;  
+                box-sizing: border-box;
+                border-radius: 30px;
 
               }
               
               #MenuListContainer p:hover {
-                border-bottom: 2px solid #00FFFF;
-                transition: border-bottom 0.3s ;
+                border: 2px solid #00FFFF;
+                opacity: 0.5;
+                transition: border 0.3s;
               }
 
               .iconContainer{
@@ -137,26 +157,16 @@ const Navbar:React.FC = () => {
                 flex-direction: column;
                 width: 100%;
                 height: 5px;
+                justify-content: center;
+                align-items: center;
                 border-radius: 5px;
                 background: rgba(0,0,0,0.1);
               }
+
               .GrowingDiv {
-                width: 100%;
                 height: 5px;
-                border-radius: 5px;
                 background-color: #00FFFF;
-                position: relative;
-                animation: growAnimation 10s infinite;
-                transform-origin: center;
-              }
-              
-              @keyframes growAnimation {
-                0%, 100% {
-                  transform: scaleX(0); 
-                }
-                50% {
-                  transform: scaleX(1);
-                }
+                transition: width 0.1s ease-out;
               }
               
               @media (max-width: 700px) {
@@ -164,6 +174,7 @@ const Navbar:React.FC = () => {
                 #Navbar{
                   height: 13vh;
                 }
+
                 #LogoContainer {
                   display: none;
                 }
@@ -172,6 +183,7 @@ const Navbar:React.FC = () => {
                   justify-content: center;
                   align-items: flex-start;
                   width: 100%;
+                  height: 100%;
                   padding-bottom: 5px;
                 }
                 
@@ -184,7 +196,6 @@ const Navbar:React.FC = () => {
                   padding-top: 50px;
                   padding-bottom: 50px;
                   padding-left: 10px;
-                  margin-top: 0px;
                   color: white;
                   font-size: 18px;
                   background-color: #343434;
