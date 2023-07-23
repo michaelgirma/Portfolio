@@ -9,8 +9,8 @@ import { faNodeJs } from '@fortawesome/free-brands-svg-icons';
 import { faPython } from '@fortawesome/free-brands-svg-icons';
 import { faGithubSquare } from '@fortawesome/free-brands-svg-icons';
 import {BiLogoTypescript} from 'react-icons/bi'
-import {TbBrandNextjs} from 'react-icons/Tb'
-import {BsFiletypeCss} from 'react-icons/Bs'
+import {TbBrandNextjs} from 'react-icons/tb'
+import {BsFiletypeCss} from 'react-icons/bs'
 import {BiLogoFirebase} from 'react-icons/bi'
 import {BiLogoMongodb} from 'react-icons/bi'
 import {RiSupabaseFill} from 'react-icons/ri'
@@ -142,7 +142,7 @@ const Skills:React.FC = () => {
                 flex-direction: column;
                 position: relative;
                 width: 80%;
-                height: 75%;
+                height: 85%;
                 border: 1px solid #00FFFF;
                 border-radius: 7px;
             }
