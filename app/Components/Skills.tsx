@@ -1,7 +1,6 @@
 'use client' 
 import React from "react"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faReact } from '@fortawesome/free-brands-svg-icons';
 import { faAngular } from '@fortawesome/free-brands-svg-icons';
 import { faJsSquare } from '@fortawesome/free-brands-svg-icons';
 import { faHtml5 } from '@fortawesome/free-brands-svg-icons';
@@ -27,10 +26,13 @@ const Skills:React.FC = () => {
         <>
         <div id="Skills" className="fade-in">
             <div id="SkillsContainer">
+                <div className="HeaderContainer">
+                    <h1 className="Header">Technical Skills</h1>
+                </div>  
                 <div id="TechnicalSkills">
-                    <div className="HeaderContainer">
+                    {/* <div className="HeaderContainer">
                         <h1 className="Header">Technical Skills</h1>
-                    </div>  
+                    </div>   */}
                     <div className="SkillBox">
                         <div className="SubTitleContainer">
                             <span className="SubTitle">Front-End Development</span>
@@ -41,20 +43,26 @@ const Skills:React.FC = () => {
                             <div className="ImageAContainer">
                                 <div className="ImageContainer">
                                     <div className="IconContainer">
-                                        <FontAwesomeIcon className="Icon" icon={faReact}/>
+                                        <img src='ReactIcon.png' className="Icon"/>
                                     </div>
                                     <div className="IconContainer">
-                                        <FontAwesomeIcon className="Icon"  icon={faAngular} />
-                                    </div>
-                                    <TbBrandNextjs className="Icon"/>
-                                    <BiLogoTypescript className="Icon"/>
-                                    <div className="IconContainer">
-                                        <FontAwesomeIcon className="Icon" icon={faJsSquare} />                                    
+                                        <img src='AngularIcon.png' className="Icon"/>
                                     </div>
                                     <div className="IconContainer">
-                                        <FontAwesomeIcon className="Icon" icon={faHtml5} />                                    
+                                        <img src='NextJsIcon.png' className="Icon"/>
                                     </div>
-                                    <BsFiletypeCss className="Icon" />
+                                    <div className="IconContainer">
+                                        <img src='TypeScriptIcon.png' className="Icon"/>
+                                    </div>
+                                    <div className="IconContainer">
+                                        <img src='JavascriptIcon.png' className="Icon"/>
+                                    </div>
+                                    <div className="IconContainer">
+                                        <img src='HtmlIcon.png' className="Icon"/>
+                                    </div>
+                                    <div className="IconContainer">
+                                        <img src='CssIcon.png' className="Icon"/>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -69,15 +77,23 @@ const Skills:React.FC = () => {
                             <div className="ImageAContainer">
                                 <div className="ImageContainer">
                                     <div className="IconContainer">
-                                        <FontAwesomeIcon className="Icon" icon={faPython} />
+                                        <img src='PythonIcon.png' className="Icon"/>
                                     </div>
-                                    <BiLogoFirebase className="Icon"/>
-                                    <BiLogoMongodb className="Icon"/>
-                                    <RiSupabaseFill className="Icon"/>
                                     <div className="IconContainer">
-                                            <FontAwesomeIcon className="Icon" icon={faNodeJs} />
+                                        <img src='FirebaseIcon.png' className="Icon"/>
                                     </div>
-                                    <SiAxios className="Icon"/>
+                                    <div className="IconContainer">
+                                        <img src='MongoDbIcon.png' className="Icon"/>
+                                    </div>
+                                    <div className="IconContainer">
+                                        <img src='SupabaseIcon.png' className="Icon"/>
+                                    </div>
+                                    <div className="IconContainer">
+                                        <img src='NodeJsIcon.png' className="Icon"/>
+                                    </div>
+                                    <div className="IconContainer">
+                                        <img src='AxiosIcon.png' className="Icon"/>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -91,9 +107,17 @@ const Skills:React.FC = () => {
                             <span className="SkillPer" id="SkillPerNode"></span>
                             <div className="ImageAContainer">
                                 <div className="ImageContainer">
-                                    <SiVercel className="Icon" />
                                     <div className="IconContainer">
-                                        <FontAwesomeIcon className="Icon" icon={faGithubSquare}/>
+                                        <img src='GcIcon.png' className="Icon" id="GoogleCloud"/>
+                                    </div>
+                                    <div className="IconContainer">
+                                        <img src='VercelIcon.png' className="Icon"/>
+                                    </div>
+                                    <div className="IconContainer">
+                                        <img src='BashIcon.png' className="Icon"/>
+                                    </div>
+                                    <div className="IconContainer">
+                                        <img src='GitHubIcon.png' className="Icon"/>
                                     </div>
                                 </div>
                             </div>
@@ -142,7 +166,7 @@ const Skills:React.FC = () => {
                 flex-direction: column;
                 position: relative;
                 width: 80%;
-                height: 85%;
+                height: 70%;
                 border: 1px solid #00FFFF;
                 border-radius: 7px;
             }
@@ -160,9 +184,7 @@ const Skills:React.FC = () => {
                 font-weight: 400;
                 font-size: 14px;
                 border-radius: 50px;
-                margin-top: 15px;
                 margin-bottom: 30px;
-                padding: 0 20px 0 20px;
             }
             .Header{
                 display: flex;
@@ -261,6 +283,10 @@ const Skills:React.FC = () => {
             .Icon:hover {
                 transform: scale(1.2); 
             }
+            #GoogleCloud{
+                width: 140px;
+
+            }
             @media (max-width: 700px){
                 #Skills{
                     height: 150vh;
@@ -271,7 +297,7 @@ const Skills:React.FC = () => {
                 }
                 #TechnicalSkills{
                     width: 90%;
-                    height: 55%;
+                    height: 50%;
                 }
                 .Title{
                     font-size: 13px;
@@ -281,13 +307,16 @@ const Skills:React.FC = () => {
                     height: 50px;
 
                 }
+                .ImageContainer{
+                    align-items: center;
+                }
+                #GoogleCloud{
+                    width: 100%;
+                }
             }
             @media(max-width: 600px){
-                #Skills{
-                    margin-top: 0px;
-                }
-                #SkillsContainer{
-                    margin-top: 0px;
+                #TechnicalSkills{
+                    height: 40%;
                 }
                 .Title{
                     font-size: 12px;
