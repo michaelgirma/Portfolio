@@ -39,7 +39,11 @@ const Projects:React.FC = () => {
                             <p id="PreWorkTitle">CreatorVerse</p>
                         </div>
                         <div className="DescriptionContainer">
-                            <p id="PreWorkDescription"></p> 
+                            <p id="PreWorkDescription">I made a fullstack website called CreatorVerse using React, Javascript, and Supabase. 
+                            On this site you can create profiles for anybody that is online and has social media platoforms. 
+                            Using CRUD operations, users can add, view, modify, or delete profiles with ease. This project was 
+                            made for my Code Path class to teach me how to devleop a frontend that can interact with an API and supports CRUD operations.  
+                            </p> 
                         </div>
                         <div className="LinkContainer">
                             <a href="https://prework-theta.vercel.app/" id="PreWorkLink">Click me to visit the Website!</a>
@@ -143,10 +147,14 @@ const Projects:React.FC = () => {
                 }
                 #ChurchDescription{
                     color: #00FFFF;
+                    font-family: Inter;
+                    font-size: 14px;
                 }
                 #ChurchLink{
                     color: #00FFFF;
                     text-decoration: none;
+                    font-family: Inter;
+                    font-size: 11px;
                 }
                 #PreWorkContainer{
                     display: flex;
@@ -188,11 +196,15 @@ const Projects:React.FC = () => {
                     font-family: InterBold;
                 }
                 #PreWorkDescription{
-
+                    color: #00FFFF;
+                    font-family: Inter;
+                    font-size: 14px;
                 }
                 #PreWorkLink{
                     color: #00FFFF;
                     text-decoration: none;
+                    font-family: Inter;
+                    font-size: 11px;
                 }
                 .TitleContainer{
                     display: flex;
@@ -208,7 +220,7 @@ const Projects:React.FC = () => {
                     display: flex;
                     position: relative;
                     width: 70%;
-                    height: 50%;
+                    height: 70%;
                     border: 1px solid #00FFFF;
                     border-radius: 20px;
                     justify-content: center;
@@ -227,6 +239,67 @@ const Projects:React.FC = () => {
                 }
                 .LinkContainer:hover {
                     transform: scale(1.3); 
+                }
+                @media(max-width: 900px){
+                    #Projects{
+                        height: 200vh;
+                    }
+                    #ChurchContainer{
+                        flex-direction: column;
+                        width: 50%;
+                        height: 80%;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                    #ChurchImageContainer{
+                        width: 90%;
+                        height: 40%;
+                    }
+                    #ChurchImage{
+                        width: 100%;
+                        height: 100%;
+                    }
+                    #ChurchTextContainer{
+                        width: 90%;
+                        height: 60%;
+                    }
+                    .LinkContainer{
+                        width: 55%;
+                    }
+                    .TitleContainer{
+                        width: 100%;
+                        border: 1px solid blue;
+                    }
+                    .DescriptionContainer{
+                        width: 100%;
+                    }
+                    #PreWorkContainer{
+                        flex-direction: column;
+                        width: 50%;
+                        height: 80%;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                    #PreWorkImageContainer{
+                        width: 90%;
+                        height: 40%;
+                    }
+                    #PreWorkImage{
+                        width: 100%;
+                        height: 100%;
+                    }
+                    #PreWorkTextContainer{
+                        width: 90%;
+                        height: 60%;
+                    }
+                }
+                @media(max-width: 700px){
+                    #ChurchContainer{
+                        width: 95%;
+                    }
+                    #PreWorkContainer{
+                        width: 95%;
+                    }
                 }
             `}</style>
         </div>

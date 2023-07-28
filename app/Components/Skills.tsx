@@ -226,6 +226,7 @@ const Skills:React.FC = () => {
                 color: #00FFFF;
                 justify-content: center;
                 align-items: center;
+                font-family: Inter;
             }
             .SkillBar{
                 height: 8px;
@@ -316,7 +317,7 @@ const Skills:React.FC = () => {
             }
             @media(max-width: 600px){
                 #TechnicalSkills{
-                    height: 40%;
+                    height: 50%;
                 }
                 .Title{
                     font-size: 12px;
