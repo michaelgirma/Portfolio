@@ -1,20 +1,5 @@
 'use client' 
 import React from "react"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngular } from '@fortawesome/free-brands-svg-icons';
-import { faJsSquare } from '@fortawesome/free-brands-svg-icons';
-import { faHtml5 } from '@fortawesome/free-brands-svg-icons';
-import { faNodeJs } from '@fortawesome/free-brands-svg-icons';
-import { faPython } from '@fortawesome/free-brands-svg-icons';
-import { faGithubSquare } from '@fortawesome/free-brands-svg-icons';
-import {BiLogoTypescript} from 'react-icons/bi'
-import {TbBrandNextjs} from 'react-icons/tb'
-import {BsFiletypeCss} from 'react-icons/bs'
-import {BiLogoFirebase} from 'react-icons/bi'
-import {BiLogoMongodb} from 'react-icons/bi'
-import {RiSupabaseFill} from 'react-icons/ri'
-import {SiAxios} from 'react-icons/si'
-import {SiVercel} from 'react-icons/si'
 import '@fortawesome/fontawesome-svg-core/styles.css';
 
 
