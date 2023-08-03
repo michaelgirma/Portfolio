@@ -61,7 +61,7 @@ const Navbar:React.FC = () => {
                     width: 100%;
                     height: 13vh;
                     flex-direction: column;
-                    background-color: #343434;
+                    background-color: black;
                     border-bottom-left-radius: 30px;
                     border-bottom-right-radius: 30px;
                     z-index: 9999;
@@ -99,16 +99,6 @@ const Navbar:React.FC = () => {
                     align-items: center;
                     flex-direction: row;                    
                }
-               #Logo{
-                    display: flex;
-                    position: relative;
-                    width: 100%;
-                    justify-content: flex-start;
-                    align-items: center;
-                    font-size: 48px;
-                    color: #00FFFF;
-                    padding-left: 35px;
-               }
                #MenuContainer{
                     display: flex;
                     position: relative;
@@ -131,7 +121,7 @@ const Navbar:React.FC = () => {
               #MenuListContainer p {
                 position: relative;
                 border-bottom: 3px solid transparent; 
-                color: #00FFFF;
+                color: white;
                 padding: 5px;  
                 box-sizing: border-box;
                 border-radius: 30px;
@@ -139,9 +129,7 @@ const Navbar:React.FC = () => {
               }
               
               #MenuListContainer p:hover {
-                border: 2px solid #00FFFF;
                 opacity: 0.5;
-                transition: border 0.3s;
               }
 
               .iconContainer{
@@ -165,7 +153,7 @@ const Navbar:React.FC = () => {
 
               .GrowingDiv {
                 height: 5px;
-                background-color: #00FFFF;
+                background-color: white;
                 transition: width 0.1s ease-out;
               }
               
@@ -198,8 +186,8 @@ const Navbar:React.FC = () => {
                   padding-left: 10px;
                   color: white;
                   font-size: 18px;
-                  background-color: #343434;
-                  border: 1px solid #00FFFF;
+                  background-color: black;
+                  border: 1px solid white;
                   border-bottom-left-radius: 30px;
                   border-bottom-right-radius: 30px;
                   animation-name: slideDownAnimation;
@@ -222,7 +210,7 @@ const Navbar:React.FC = () => {
                 }
                 
                 #MenuListContainer p:hover {
-                  border-bottom: 3px solid #00FFFF;
+                  border-bottom: 3px solid #white;
                   transition: border-bottom 0.5s ease;
                 }
                 
@@ -235,7 +223,7 @@ const Navbar:React.FC = () => {
                   height: 30px;
                   margin-top: 20px;
                   padding-left: 10px;
-                  color: #00FFFF;
+                  color: white;
                   
                 }
                 .icon{

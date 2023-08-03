@@ -1,17 +1,63 @@
 'use client' 
 import React from "react"
+import { useState, useEffect, useRef } from 'react';
+
 
 const Projects:React.FC = () => {
+    const [effectToggle, setEffectToggle] = useState(true);
+    const [effectText, setEffectText] = useState('On');
+    const [projectScrollHeight, setProjectScrollHeight] = useState('0%');
+    const projectTextContainerRef = useRef<HTMLDivElement>(null);
+
+    const toggleEffect = () => {
+
+        setEffectToggle(!effectToggle);
+
+        if (effectToggle === false) {
+            setEffectText('On');
+        } else {
+            setEffectText('Off');
+        }
+    }
+
+    const handleProjectScroll = () => {
+        const projectTextContainer = projectTextContainerRef.current;
+        if (!projectTextContainer) return;
+      
+        const containerHeight = projectTextContainer.clientHeight;
+        const containerTop = projectTextContainer.getBoundingClientRect().top;
+        const scrollPosition = Math.max(0, window.scrollY - containerTop - window.innerHeight * 1.9);
+
+        const isContainerVisible = containerTop + containerHeight >= 0 && containerTop <= window.innerHeight;
+      
+        if (!isContainerVisible) {
+          setProjectScrollHeight('0%');
+        } else {
+          const maxScroll = containerHeight * 2;
+          const projectScrollPercentage = Math.min((scrollPosition / maxScroll) * 100, 100);
+          setProjectScrollHeight(`${projectScrollPercentage}%`);
+          console.log(projectScrollPercentage);
+        }
+    }
+    
+    useEffect(() => {
+
+        window.addEventListener('scroll', handleProjectScroll);
+        
+        return () => {
+            window.removeEventListener('scroll', handleProjectScroll);
+        };
+
+    }, []);
+
     return(
-        <div id="Projects" className="fade-in">
+        <div id="Projects"  ref={projectTextContainerRef}>
             <div id="ProjectsContainer">
                 <div id="ProjectsHeaderContainer">
                     <div id="ProjectsHeader">Projects</div>
+                    <button id="ProjectsHeaderToggle" onClick={toggleEffect}>Effect: {effectText}</button>
                 </div>
                 <div id="ChurchContainer">
-                    <div id="ChurchImageContainer">
-                        <img src="Church.png" alt="" id="ChurchImage" />
-                    </div>
                     <div id="ChurchTextContainer">
                         <div className="TitleContainer">
                             <p id="ChurchTitle">DebreTsion Church Website</p>
@@ -31,9 +77,6 @@ const Projects:React.FC = () => {
                     </div>
                 </div>
                 <div id="PreWorkContainer">
-                    <div id="PreWorkImageContainer">
-                        <img src="CreatorVerse.png" alt="" id="PreWorkImage"/>
-                    </div>
                     <div id="PreWorkTextContainer">
                         <div className="TitleContainer">
                             <p id="PreWorkTitle">CreatorVerse</p>
@@ -52,30 +95,18 @@ const Projects:React.FC = () => {
                 </div>
             </div>
             <style>{`
+
+                :root { --projectScrollHeight: ${projectScrollHeight}; }
+                
                 #Projects{
                     display: flex;
                     position: relative;
                     width: 100%;
-                    height: 150vh;
+                    height: 200vh;
                     flex-direction: column;
                     justify-content: space-around;
                     align-items: center;
                     margin-top: 10%;
-                }
-                .fade-in {
-                    opacity: 0;
-                    animation-name: fadeInAnimation;
-                    animation-duration: 2s;
-                    animation-fill-mode: forwards;
-                   }
-                  
-                  @keyframes fadeInAnimation {
-                    from {
-                      opacity: 0;
-                    }
-                    to {
-                      opacity: 1;
-                    }
                 }
                 #ProjectsContainer{
                     display: flex;
@@ -84,7 +115,17 @@ const Projects:React.FC = () => {
                     height: 100%;
                     flex-direction: column;
                     justify-content: space-around;
-                    align-items: center;                    
+                    align-items: center; 
+                    overflow: hidden;                   
+                }
+                #ProjectsHeaderToggle {
+                    display: flex; 
+                    position: absolute;
+                    top: 20%;
+                    right: 5%;
+                    color: white;
+                    background-color: black;
+                    border: 1px solid white;
                 }
                 #ProjectsHeaderContainer{
                     display: flex;
@@ -92,47 +133,38 @@ const Projects:React.FC = () => {
                     justify-content: center;
                     align-items: center;
                     text-align: center;
-                    width: 90%;
-                    height: 71px;
-                    background-color: #00FFFF;
+                    width: 60%;
+                    height: 25%;
+                    background-color: black;
+                    border: 1px solid white;
                     border-radius: 50px;
                     margin-bottom: 30px;
                 }
                 #ProjectsHeader{
                     display: flex;
                     position: relative;
-                    color: #343434;
+                    color: white;
                     font-weight: 400;
-                    font-size: 32px;
+                    font-size: 70px;
                     font-family: InterBold;
                 }
                 #ChurchContainer{
                     display: flex;
                     position: relative;
-                    width: 80%;
+                    width: 50%;
                     height: 30%;
                     flex-direction: row;
                     border-radius: 30px;
-                    border: 5px solid #00FFFF;
-                }
-                #ChurchImageContainer{
-                    display: flex;
-                    position: relative;
-                    width: 40%;
-                    height: 100%;
-                    border-radius: 30px;
-                }
-                #ChurchImage{
-                    display: flex;
-                    position: relative;
-                    width: 100%;
-                    height: 100%;
-                    border-radius: 30px;
+                    border: 5px solid white;
+                    justify-content: center;
+                    align-items: center;
+                    left: ${effectToggle ? '50%' : '0'};
+                    transform: ${effectToggle ? `translateX(calc(-1.0 * ${projectScrollHeight}))` : 'none'};
                 }
                 #ChurchTextContainer{
                     display: flex;
                     position: relative;
-                    width: 60%;
+                    width: 100%;
                     height: 100%;
                     border-radius: 30px;
                     justify-content: space-around;
@@ -140,18 +172,18 @@ const Projects:React.FC = () => {
                     flex-direction: column;
                 }
                 #ChurchTitle{
-                    color: #343434;
+                    color: white;
                     font-weight: 400;
                     font-size: 23px;
                     font-family: InterBold;
                 }
                 #ChurchDescription{
-                    color: #00FFFF;
+                    color: white;
                     font-family: Inter;
                     font-size: 14px;
                 }
                 #ChurchLink{
-                    color: #00FFFF;
+                    color: white;
                     text-decoration: none;
                     font-family: Inter;
                     font-size: 11px;
@@ -159,30 +191,20 @@ const Projects:React.FC = () => {
                 #PreWorkContainer{
                     display: flex;
                     position: relative;
-                    width: 80%;
+                    width: 50%;
                     height: 30%;
                     flex-direction: row;
                     border-radius: 30px;
-                    border: 5px solid #00FFFF;
-                }
-                #PreWorkImageContainer{
-                    display: flex;
-                    position: relative;
-                    width: 40%;
-                    height: 100%;
-                    border-radius: 30px;
-                }
-                #PreWorkImage{
-                    display: flex;
-                    position: relative;
-                    width: 100%;
-                    height: 100%;
-                    border-radius: 30px;
+                    border: 5px solid white;
+                    justify-content: center;
+                    align-items: center;
+                    right: ${effectToggle ? '50%' : '0'};
+                    transform: ${effectToggle ? `translateX(calc(1.0 * ${projectScrollHeight}))` : 'none'};
                 }
                 #PreWorkTextContainer{
                     display: flex;
                     position: relative;
-                    width: 60%;
+                    width: 100%;
                     height: 100%;
                     border-radius: 30px;
                     justify-content: space-around;
@@ -190,18 +212,18 @@ const Projects:React.FC = () => {
                     flex-direction: column;
                 }
                 #PreWorkTitle{
-                    color: #343434;
+                    color: white;
                     font-weight: 400;
                     font-size: 23px;
                     font-family: InterBold;
                 }
                 #PreWorkDescription{
-                    color: #00FFFF;
+                    color: white;
                     font-family: Inter;
                     font-size: 14px;
                 }
                 #PreWorkLink{
-                    color: #00FFFF;
+                    color: white;
                     text-decoration: none;
                     font-family: Inter;
                     font-size: 11px;
@@ -214,14 +236,14 @@ const Projects:React.FC = () => {
                     justify-content: center;
                     align-items: center;
                     border-radius: 50px;
-                    background-color: #00FFFF;
+                    border: 1px solid white;
                 }
                 .DescriptionContainer{
                     display: flex;
                     position: relative;
                     width: 70%;
                     height: 70%;
-                    border: 1px solid #00FFFF;
+                    border: 1px solid white;
                     border-radius: 20px;
                     justify-content: center;
                     align-items: center;
@@ -232,7 +254,7 @@ const Projects:React.FC = () => {
                     display: flex;
                     position: relative;
                     width: 35%;
-                    border: 1px solid #00FFFF;
+                    border: 1px solid white;
                     border-radius: 30px;
                     justify-content: center;
                     align-items: center;
@@ -250,14 +272,6 @@ const Projects:React.FC = () => {
                         height: 80%;
                         justify-content: center;
                         align-items: center;
-                    }
-                    #ChurchImageContainer{
-                        width: 90%;
-                        height: 40%;
-                    }
-                    #ChurchImage{
-                        width: 100%;
-                        height: 100%;
                     }
                     #ChurchTextContainer{
                         width: 90%;
@@ -279,14 +293,6 @@ const Projects:React.FC = () => {
                         height: 80%;
                         justify-content: center;
                         align-items: center;
-                    }
-                    #PreWorkImageContainer{
-                        width: 90%;
-                        height: 40%;
-                    }
-                    #PreWorkImage{
-                        width: 100%;
-                        height: 100%;
                     }
                     #PreWorkTextContainer{
                         width: 90%;
