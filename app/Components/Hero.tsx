@@ -17,7 +17,7 @@ const Hero:React.FC = () => {
             <div id="HeroContainer">
                 <div id="TextContainer">
                     <div id="NameContainer">
-                        <h1 id="Name">Hello, Im Michael</h1>
+                        <p id="Name">Hello, Im Michael</p>
                     </div>
                     <div id="DescriptionContainer">
                         <p id="Description">Im a FullStack devloper who is currently enrolled at the University of Maryland, College Park.</p>
@@ -38,7 +38,7 @@ const Hero:React.FC = () => {
                     flex-direction: column;
                     width: 100vw;
                     height: 70vh;
-                    background-color: #343434;
+                    background-color: black;
                     border-radius: 20px;
                     margin-top: 80px;
                 }
@@ -69,7 +69,7 @@ const Hero:React.FC = () => {
                     display: flex;
                     position: relative;
                     width: 60%;
-                    height: 80%;
+                    height: 90%;
                     flex-direction: column;
                     justify-content: center;
                     align-items: center;
@@ -84,7 +84,7 @@ const Hero:React.FC = () => {
                 #Name{
                     display: flex;
                     position: relative;
-                    color: #00FFFF;
+                    color: white;
                     font-family: InterBold;
                     text-align: center;
                     font-size: 60px;
@@ -95,12 +95,11 @@ const Hero:React.FC = () => {
                     width: 60%;
                     justify-content: center;
                     align-items: center;
-                    padding-left: 5px;
                 }
                 #Description{
                     display: flex;
                     position: relative;
-                    color: #00FFFF;
+                    color: white;
                     font-family: Inter;
                     font-size: 20px;
                     text-align: center;
@@ -117,14 +116,13 @@ const Hero:React.FC = () => {
                     position: relative;
                     align-items: center;
                     justify-content: center;
-                    margin-top: 10px;
                     animation: arrow-bounce 1s infinite;
                   }
           
                   #arrow {
                     width: 40px;
                     height: 40px;
-                    border: solid #00FFFF;
+                    border: solid white;
                     border-width: 0 5px 5px 0;
                     display: inline-block;
                     padding: 3px;

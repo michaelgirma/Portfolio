@@ -6,16 +6,16 @@ body{
   flex-direction: column;
   margin: 0;
   padding: 0;
-  background-color:#343434;
+  background-color: black;
 }
 
 body::-webkit-scrollbar {
   width: 0.2em;
-  background-color: #343434;
+  background-color: black;
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: #00FFFF;
+  background-color: white;
 }
 
 @font-face {

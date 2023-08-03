@@ -21,56 +21,73 @@ const Experience:React.FC = () => {
                     display: flex;
                     position: relative;
                     width: 100%;
-                    height: 100vh;  
+                    height: 150vh;  
                 }
                 #ExperienceContainer{
                     display: flex;
                     position: relative;
-                    flex-direction: column;
-                    width: 100%;
+                    flex-direction: row;
+                    width: 98%;
                     height: 100%;
-                    justify-content: center;
+                    justify-content: space-around;
                     align-items: center;
                 }
                 #ExperienceHeaderContainer{
                     display: flex;
                     position: relative;
-                    width: 90%;
-                    height: 71px;
                     justify-content: center;
                     align-items: center;
-                    background-color: #00FFFF;
+                    text-align: center;
+                    width: 35%;
+                    height: 35%;
+                    margin-left: auto;
+                    margin-right: auto;
+                    margin-top: 10%;
+                    background-color: black;
+                    border: 1px solid white;
+                    color: white;
+                    font-weight: 400;
+                    font-size: 14px;
                     border-radius: 50px;
-                    margin-bottom: 100px;                
+                    margin-bottom: 30px;               
                 }
                 #ExperienceHeader{
                     display: flex;
                     position: relative;
-                    color: #343434;
+                    color: white;
                     font-weight: 400;
-                    font-size: 32px;
+                    font-size: 50px;
                     font-family: InterBold;
                 }
                 #ExperienceTextContainer{
                     display: flex;
                     position: relative;
-                    width: 70%;
-                    height: 65%;
+                    width: 50%;
+                    height: 55%;
                     margin-top: 50px;
                     border-radius: 50px;
                     justify-content: center;
                     align-items: center;
                     text-align: center;
-                    border: 1px solid #00FFFF;
+                    overflow-y: scroll;
+                    border: 1px solid white;
                 }
                 #CurrentText{
-                    color: #00FFFF;
+                    color: white;
                     font-family: Inter;
                     font-size: 17px;
                 }
-                @media(max-width: 500px){
+                @media(max-width: 700px){
+                    #ExperienceContainer{
+                        width: 100%;
+                        flex-direction: column;
+                    }
+                    #ExperienceHeaderContainer{
+                        width: 70%;
+                        height: 35%;
+                    }
                     #ExperienceTextContainer{
-                        width: 95%;
+                        width: 90%;
                     }
                 }
             `}</style>

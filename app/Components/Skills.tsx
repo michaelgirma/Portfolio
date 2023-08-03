@@ -11,13 +11,10 @@ const Skills:React.FC = () => {
         <>
         <div id="Skills" className="fade-in">
             <div id="SkillsContainer">
-                <div className="HeaderContainer">
-                    <h1 className="Header">Technical Skills</h1>
-                </div>  
+                <div id="SmallHeaderContainer">
+                    <h1 id="SmallHeader">Technical Skills</h1>
+                </div> 
                 <div id="TechnicalSkills">
-                    {/* <div className="HeaderContainer">
-                        <h1 className="Header">Technical Skills</h1>
-                    </div>   */}
                     <div className="SkillBox">
                         <div className="SubTitleContainer">
                             <span className="SubTitle">Front-End Development</span>
@@ -68,16 +65,10 @@ const Skills:React.FC = () => {
                                         <img src='FirebaseIcon.png' className="Icon"/>
                                     </div>
                                     <div className="IconContainer">
-                                        <img src='MongoDbIcon.png' className="Icon"/>
-                                    </div>
-                                    <div className="IconContainer">
                                         <img src='SupabaseIcon.png' className="Icon"/>
                                     </div>
                                     <div className="IconContainer">
                                         <img src='NodeJsIcon.png' className="Icon"/>
-                                    </div>
-                                    <div className="IconContainer">
-                                        <img src='AxiosIcon.png' className="Icon"/>
                                     </div>
                                 </div>
                             </div>
@@ -109,6 +100,9 @@ const Skills:React.FC = () => {
                         </div>
                     </div>
                 </div>
+                <div id="BigHeaderContainer">
+                    <h1 id="BigHeader">Technical Skills</h1>
+                </div>  
             </div>
             
             <style>{`
@@ -139,41 +133,46 @@ const Skills:React.FC = () => {
             }
             #SkillsContainer{
                 display: flex;
-                flex-direction: column;
+                flex-direction: row;
                 position: relative;
-                width: 100%;
+                width: 95%;
                 height: 100%;
-                justify-content: center;
+                justify-content: space-around;
                 align-items: center;
             }
             #TechnicalSkills{
                 display: flex;
                 flex-direction: column;
                 position: relative;
-                width: 80%;
+                width: 60%;
                 height: 70%;
-                border: 1px solid #00FFFF;
-                border-radius: 7px;
+                border-radius: 30px;
+                background-color: white;
+                justify-content: space-around;
+                padding-bottom: 30px;
             }
-            .HeaderContainer{
+            #BigHeaderContainer{
                 display: flex;
                 position: relative;
                 justify-content: center;
                 align-items: center;
                 text-align: center;
-                width: 90%;
+                width: 35%;
+                height: 35%;
                 margin-left: auto;
                 margin-right: auto;
-                background-color: #00FFFF;
-                color: #343434;
+                background-color: black;
+                border: 1px solid white;
+                color: white;
                 font-weight: 400;
                 font-size: 14px;
                 border-radius: 50px;
                 margin-bottom: 30px;
             }
-            .Header{
+            #BigHeader{
                 display: flex;
                 position: relative;
+                font-size: 50px;
             }
             .SubTitleContainer{
                 display: flex;
@@ -189,16 +188,15 @@ const Skills:React.FC = () => {
                 height: 30px;
                 justify-content: center;
                 align-items: center;
-                background-color: #00FFFF;
+                background-color: black;
                 border-radius: 20px;
-                color: #343434;
+                color: white;
                 font-family: InterBold;
             }
             .SkillBox{
                 display: flex;
                 position: relative;
                 width: 100%;
-                margin: 50px 0;
                 justify-content: center;
                 align-items: center;
                 flex-direction: column;
@@ -208,7 +206,7 @@ const Skills:React.FC = () => {
                 position: relative;
                 font-size: 17px;
                 font-weight: 600;
-                color: #00FFFF;
+                color: black;
                 justify-content: center;
                 align-items: center;
                 font-family: Inter;
@@ -216,15 +214,14 @@ const Skills:React.FC = () => {
             .SkillBar{
                 height: 8px;
                 width: 100%;
-                margin-top: 6px;
-                background: rgba(0,0,0,0.1);
             }
             .SkillPer{
                 position: relative;
                 display: block;
                 height: 50%;
                 width: 50%;
-                background: #00FFFF;
+                background: black;
+                margin-top: 2%;
             }
             #SkillPerHtml{
                 width: 100%;
@@ -261,8 +258,8 @@ const Skills:React.FC = () => {
                 align-items: center;
             }
             .Icon{
-                width: 80px;
-                height: 80px;
+                width: 50px;
+                height: 50px;
                 color: #00FFFF;
                 transition: transform 0.3s;
             }
@@ -270,12 +267,45 @@ const Skills:React.FC = () => {
                 transform: scale(1.2); 
             }
             #GoogleCloud{
-                width: 140px;
-
+            }
+            #SmallHeaderContainer{
+                display: none;
+            }
+            #SmallHeader{
+                display: none;
             }
             @media (max-width: 700px){
                 #Skills{
                     height: 150vh;
+                }
+                #SmallHeaderContainer{
+                    display: flex;
+                    position: relative;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                    width: 70%;
+                    height: 35%;
+                    margin-left: auto;
+                    margin-right: auto;
+                    background-color: black;
+                    border: 1px solid white;
+                    color: white;
+                    font-weight: 400;
+                    font-size: 14px;
+                    border-radius: 50px;
+                    margin-bottom: 30px;
+                }
+                #SmallHeader{
+                    display: flex;
+                    position: relative;
+                    font-size: 50px;
+                }
+                #BigHeaderContainer{
+                    display: none;
+                }
+                #BigHeader{
+                    display: none;
                 }
                 #SkillsContainer{
                     flex-direction: column;
@@ -300,17 +330,21 @@ const Skills:React.FC = () => {
                     width: 100%;
                 }
             }
-            @media(max-width: 600px){
+            @media(max-width: 900px){
+                .Title{
+                    font-size: 12px;
+                }
+            }
+            @media(max-width: 450px){
                 #TechnicalSkills{
                     height: 50%;
                 }
                 .Title{
-                    font-size: 12px;
+                    font-size: 10px;
                 }
                 .Icon{
-                    width: 40px;
-                    height: 40px;
-
+                    width: 30px;
+                    height: 30px;
                 }
                 .SubTitleContainer{
                     width: 80%;
