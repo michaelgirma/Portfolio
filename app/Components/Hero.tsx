@@ -2,7 +2,7 @@
 import React from "react"
 import { useState } from "react"
 import styled, { keyframes } from 'styled-components'
-import { BiLogoGmail } from 'react-icons/Bi'
+import { BiLogoGmail } from 'react-icons/bi'
 
 const bounce = keyframes`
         0% { transform: translate(0, 0); }
