@@ -111,7 +111,6 @@ const Skills:React.FC = () => {
                 position: relative;
                 width: 100%;
                 height: 120vh;
-                margin-top: 60px;
                 box-sizing: border-box;
                 justify-content: center;
                 align-items: center;
@@ -336,6 +335,8 @@ const Skills:React.FC = () => {
                 }
             }
             @media(max-width: 450px){
+                #Skills{
+                }
                 #TechnicalSkills{
                     height: 50%;
                 }
