@@ -1,13 +1,32 @@
+'use client' 
 import React from "react";
+import { useState, useEffect } from "react";
+
 
 const Experience:React.FC = () => {
+    const [animationStateExperience, setAnimationStateExperience] = useState(false);
+
+    const handleScroll = () => {
+        if (window.scrollY > 2000) {
+            setAnimationStateExperience(true);
+        }
+    };
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
     return(
         <div id="Experience">
             <div id="ExperienceContainer">
                 <div id="ExperienceHeaderContainer">
                     <h1 id="ExperienceHeader">Experience</h1>
                 </div>
-                <div id="ExperienceTextContainer">
+                <div id="ExperienceTextContainer" className={animationStateExperience ? "animate" : ""}>
                     <p id="CurrentText">While I may not have professional experience in this field yet, I am a passionate self-learner and have dedicated numerous hours to mastering my skills in full stack web development. 
                         Through self-study, online courses, and hands-on projects, I have developed a strong foundation and familiarity with all the skills above. 
                         I have put this knowledge to practice by building a projects which will be down below.  My journey has not only allowed me to apply and deepen my understanding but also created a strong sense of problem-solving, adaptability, and persistence. 
@@ -26,7 +45,7 @@ const Experience:React.FC = () => {
                 #ExperienceContainer{
                     display: flex;
                     position: relative;
-                    flex-direction: row;
+                    flex-direction: column;
                     width: 98%;
                     height: 100%;
                     justify-content: space-around;
@@ -38,44 +57,69 @@ const Experience:React.FC = () => {
                     justify-content: center;
                     align-items: center;
                     text-align: center;
-                    width: 35%;
+                    width: 100%;
                     height: 35%;
-                    margin-left: auto;
-                    margin-right: auto;
                     margin-top: 10%;
                     background-color: black;
-                    border: 1px solid white;
                     color: white;
-                    font-weight: 400;
                     font-size: 14px;
-                    border-radius: 50px;
-                    margin-bottom: 30px;               
+                    margin-bottom: 30px; 
+                    background: linear-gradient(-45deg, black, black, white, black);
+                    background-size: 400% 400%;
+                    animation: gradient 15s ease infinite;              
+                }
+                keyframes gradient{
+                    0% {
+                        background-position: 0% 50%;
+                    }
+                    50% {
+                        background-position: 100% 50%;
+                    }
+                    100% {
+                        background-position: 0% 50%;
+                    }
                 }
                 #ExperienceHeader{
                     display: flex;
                     position: relative;
                     color: white;
                     font-weight: 400;
-                    font-size: 50px;
+                    font-size: 60px;
                     font-family: InterBold;
                 }
                 #ExperienceTextContainer{
                     display: flex;
                     position: relative;
-                    width: 50%;
-                    height: 55%;
+                    width: 70%;
+                    height: 70%;
                     margin-top: 50px;
                     border-radius: 50px;
                     justify-content: center;
                     align-items: center;
                     text-align: center;
                     overflow-y: scroll;
-                    border: 1px solid white;
+                    transform: translateX(200%)
+                }
+                .animate {
+                    animation: 2s ease-out forwards;
+                }
+                #ExperienceTextContainer.animate {
+                    animation-name: fadeInFromRight;
+                }
+                @keyframes fadeInFromRight{
+                    0% {
+                      transform: translateX(200%);
+                      opacity: 0;
+                    }
+                    100% {
+                      transform: translateX(0);
+                      opacity: 1;
+                    }
                 }
                 #CurrentText{
                     color: white;
                     font-family: Inter;
-                    font-size: 17px;
+                    font-size: 20px;
                 }
                 @media(max-width: 700px){
                     #ExperienceContainer{

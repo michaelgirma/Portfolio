@@ -62,8 +62,6 @@ const Navbar:React.FC = () => {
                     height: 13vh;
                     flex-direction: column;
                     background-color: black;
-                    border-bottom-left-radius: 30px;
-                    border-bottom-right-radius: 30px;
                     z-index: 9999;
                }
                .fade-in {
