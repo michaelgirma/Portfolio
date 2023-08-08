@@ -1,5 +1,6 @@
 'use client' 
 import React from "react"
+import { useState, useEffect } from "react";
 import '@fortawesome/fontawesome-svg-core/styles.css';
 
 
@@ -7,21 +8,36 @@ import '@fortawesome/fontawesome-svg-core/styles.css';
 
 const Skills:React.FC = () => {
 
+    const [animationStateSkills, setAnimationStateSkills] = useState(false);
+
+    const handleScroll = () => {
+        if (window.scrollY > 1000) {
+            setAnimationStateSkills(true);
+        }
+    };
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
     return(
         <>
-        <div id="Skills" className="fade-in">
+        <div id="Skills" >
             <div id="SkillsContainer">
-                <div id="SmallHeaderContainer">
-                    <h1 id="SmallHeader">Technical Skills</h1>
+                <div id="BigHeaderContainer" >
+                    <h1 id="BigHeader">Technical Skills</h1>
                 </div> 
-                <div id="TechnicalSkills">
+                <div id="TechnicalSkills" className={animationStateSkills ? "animate" : ""}>
                     <div className="SkillBox">
                         <div className="SubTitleContainer">
                             <span className="SubTitle">Front-End Development</span>
                         </div> 
-                        <span className="Title">React, Angular, Next.js, TypeScript, JavaScript, HTML, CSS</span>
+                        <div className="Title">React, Angular, Next.js, TypeScript, JavaScript, HTML, CSS</div>
                         <div className="SkillBar">
-                            <span className="SkillPer" id="SkillPerHtml"></span>
                             <div className="ImageAContainer">
                                 <div className="ImageContainer">
                                     <div className="IconContainer">
@@ -47,15 +63,15 @@ const Skills:React.FC = () => {
                                     </div>
                                 </div>
                             </div>
+                            <span className="SkillPer" id="SkillPerCSS"></span>
                         </div>
                     </div>
                     <div className="SkillBox">
                         <div className="SubTitleContainer">
                             <span className="SubTitle">Back-End Development</span>
                         </div>
-                        <span className="Title">Python, Firebase, MongoDB, Supabase, Node.js, Express.js, Axios</span>
+                        <div className="Title">Python, Firebase, Supabase, Node.js</div>
                         <div className="SkillBar">
-                            <span className="SkillPer" id="SkillPerCSS"></span>
                             <div className="ImageAContainer">
                                 <div className="ImageContainer">
                                     <div className="IconContainer">
@@ -72,15 +88,15 @@ const Skills:React.FC = () => {
                                     </div>
                                 </div>
                             </div>
+                            <span className="SkillPer" id="SkillPerCSS"></span>
                         </div>
                     </div>
                     <div className="SkillBox">
                         <div className="SubTitleContainer">
                             <span className="SubTitle">Miscellaneous</span>
                         </div>
-                        <span className="Title">Google Cloud Platform, Vercel, Bash, Git/GitHub</span>
+                        <div className="Title">Google Cloud Platform, Vercel, Bash, Git/GitHub</div>
                         <div className="SkillBar">
-                            <span className="SkillPer" id="SkillPerNode"></span>
                             <div className="ImageAContainer">
                                 <div className="ImageContainer">
                                     <div className="IconContainer">
@@ -99,10 +115,7 @@ const Skills:React.FC = () => {
                             </div>
                         </div>
                     </div>
-                </div>
-                <div id="BigHeaderContainer">
-                    <h1 id="BigHeader">Technical Skills</h1>
-                </div>  
+                </div> 
             </div>
             
             <style>{`
@@ -110,45 +123,50 @@ const Skills:React.FC = () => {
                 display: flex;
                 position: relative;
                 width: 100%;
-                height: 120vh;
+                height: 150vh;
                 box-sizing: border-box;
                 justify-content: center;
                 align-items: center;
-            }
-            .fade-in {
-                opacity: 0;
-                animation-name: fadeInAnimation;
-                animation-duration: 2s;
-                animation-fill-mode: forwards;
-               }
-              
-              @keyframes fadeInAnimation {
-                from {
-                  opacity: 0;
-                }
-                to {
-                  opacity: 1;
-                }
+                overflow-x: hidden;
             }
             #SkillsContainer{
                 display: flex;
-                flex-direction: row;
+                flex-direction: column;
                 position: relative;
-                width: 95%;
+                width: 100%;
                 height: 100%;
                 justify-content: space-around;
                 align-items: center;
+                overflow: hidden;
+            }
+            .animate {
+                animation: 2s ease-out forwards;
+            }
+            #TechnicalSkills.animate {
+                animation-name: fadeInFromLeft;
+            }
+            @keyframes fadeInFromLeft{
+                0% {
+                  transform: translateX(-200%);
+                  opacity: 0;
+                }
+                100% {
+                  transform: translateX(0);
+                  opacity: 1;
+                }
             }
             #TechnicalSkills{
                 display: flex;
                 flex-direction: column;
                 position: relative;
-                width: 60%;
+                width: 80%;
                 height: 70%;
                 border-radius: 30px;
-                background-color: white;
-                justify-content: space-around;
                 padding-bottom: 30px;
+                background-color: black;
+                justify-content: space-around;
+                align-items: center;
+                transform: translateX(-350%);
             }
             #BigHeaderContainer{
                 display: flex;
@@ -156,59 +174,70 @@ const Skills:React.FC = () => {
                 justify-content: center;
                 align-items: center;
                 text-align: center;
-                width: 35%;
+                width: 100%;
                 height: 35%;
-                margin-left: auto;
-                margin-right: auto;
-                background-color: black;
-                border: 1px solid white;
                 color: white;
-                font-weight: 400;
                 font-size: 14px;
-                border-radius: 50px;
                 margin-bottom: 30px;
+                background: linear-gradient(-45deg, black, black, white, black);
+                background-size: 400% 400%;
+                animation: gradient 15s ease infinite;
             }
             #BigHeader{
                 display: flex;
                 position: relative;
-                font-size: 50px;
+                font-size: 60px;
+            }
+            @keyframes gradient {
+                0% {
+                    background-position: 0% 50%;
+                }
+                50% {
+                    background-position: 100% 50%;
+                }
+                100% {
+                    background-position: 0% 50%;
+                }
             }
             .SubTitleContainer{
                 display: flex;
                 position: relative;
                 width: 100%;
-                justify-content: center;
+                justify-content: space-around;
                 align-items: center;
+                margin-bottom: 30px;
             }
             .SubTitle{
                 display: flex;
                 position: relative;
-                width: 300px;
+                width: 100%;
                 height: 30px;
                 justify-content: center;
                 align-items: center;
                 background-color: black;
                 border-radius: 20px;
                 color: white;
-                font-family: InterBold;
+                font-family: InterSemi;
+                font-size: 40px;
             }
             .SkillBox{
                 display: flex;
                 position: relative;
                 width: 100%;
-                justify-content: center;
+                justify-content: space-around;
                 align-items: center;
                 flex-direction: column;
             }
             .Title{
                 display: flex;
                 position: relative;
-                font-size: 17px;
+                font-size: 19px;
                 font-weight: 600;
                 color: black;
-                justify-content: center;
+                justify-content: space-around;
                 align-items: center;
                 font-family: Inter;
+                color: white;
             }
             .SkillBar{
                 height: 8px;
@@ -241,6 +270,7 @@ const Skills:React.FC = () => {
                 height: 80px;
                 justify-content: center;
                 align-items: center;
+                margin-bottom: 30px;
             }
             .ImageContainer{
                 display: flex;
@@ -276,35 +306,6 @@ const Skills:React.FC = () => {
             @media (max-width: 700px){
                 #Skills{
                     height: 150vh;
-                }
-                #SmallHeaderContainer{
-                    display: flex;
-                    position: relative;
-                    justify-content: center;
-                    align-items: center;
-                    text-align: center;
-                    width: 70%;
-                    height: 35%;
-                    margin-left: auto;
-                    margin-right: auto;
-                    background-color: black;
-                    border: 1px solid white;
-                    color: white;
-                    font-weight: 400;
-                    font-size: 14px;
-                    border-radius: 50px;
-                    margin-bottom: 30px;
-                }
-                #SmallHeader{
-                    display: flex;
-                    position: relative;
-                    font-size: 50px;
-                }
-                #BigHeaderContainer{
-                    display: none;
-                }
-                #BigHeader{
-                    display: none;
                 }
                 #SkillsContainer{
                     flex-direction: column;

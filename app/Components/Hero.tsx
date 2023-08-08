@@ -1,30 +1,8 @@
 'use client' 
 import React from "react"
 import { useState, useEffect } from "react";
-import styled, { keyframes } from 'styled-components'
 import { BiLogoGmail } from 'react-icons/bi'
 
-const bounce = keyframes`
-        0% { transform: translate(0, 0); }
-        25% { transform: translate(50px, 50px); }
-        50% { transform: translate(100px, 0); }
-        75% { transform: translate(50px, -50px); }
-        100% { transform: translate(0, 0); }
-    `;
-
-    const StyledWelcome = styled.div`
-        animation: ${bounce} 4s linear infinite;
-        font-size: 60px;
-        font-family: InterBold;
-        color: white;
-        position: relative;
-        text-align: center;
-        padding-top: 10%;
-        padding-right: 100px;
-        padding-bottom: 0px;
-
-
-    `;
 
 const Hero:React.FC = () => {
 
@@ -54,7 +32,7 @@ const Hero:React.FC = () => {
                 <div id="HeroHeaderContainer" className="fade-in">
                     <div id="HeroHeader">Hello, Im Michael Girma <br/> An Upcoming FullStack developer </div>
                     <div id="HeroRightContainer">
-                        <StyledWelcome>Welcome</StyledWelcome>
+                           <h1 id="Welcome">Welcome</h1>
                     </div>
                 </div>
                 <div id="HeroBodyContainer">
@@ -99,8 +77,7 @@ const Hero:React.FC = () => {
                 width: 100%;
                 height: 150vh;
                 margin-top: 10%;
-                margin-bottom: 20%;
-                overflow: hidden;
+                margin-bottom: 10%;
             }
             #HeroContainer{
                 display: flex;
@@ -110,7 +87,6 @@ const Hero:React.FC = () => {
                 height: 100%;
                 justify-content: space-between;
                 align-items: center;
-                overflow: hidden;
             }
             #HeroHeaderContainer{
                 display: flex;
@@ -140,8 +116,25 @@ const Hero:React.FC = () => {
                 justify-content: center;
                 align-items: center;
                 overflow: hidden;
-                margin-bottom: 0px;
-                padding-bottom: 40px;
+                background: linear-gradient(-45deg, black, black, white, black);
+                background-size: 400% 400%;
+                animation: gradient 15s ease infinite;
+            }
+            @keyframes gradient {
+                0% {
+                    background-position: 0% 50%;
+                }
+                50% {
+                    background-position: 100% 50%;
+                }
+                100% {
+                    background-position: 0% 50%;
+                }
+            }
+            #Welcome{
+                font-family: InterBold;
+                color: white;
+                font-size: 80px;
             }
             #HeroButton{
                 text-decoration: none;
@@ -159,14 +152,13 @@ const Hero:React.FC = () => {
                 justify-content: center;
                 align-items: center;
                 gap: 5%;
-                padding-left: 30%;
-                overflow: hidden;
+                overflow-x: hidden;
             }
             #HeroLeftContainer{
                 display: flex;
                 position: relative;
                 flex-direction: column;
-                width: 80%;
+                width: 60%;
                 height: 80%;
                 justify-content: space-between;
                 align-items: center;
@@ -198,7 +190,7 @@ const Hero:React.FC = () => {
             #HeroBiographyBodyContainer{
                 display: flex;
                 position: relative;
-                width: 60%;
+                width: 100%;
                 height: 90%;
                 text-align: left;
             }
@@ -232,7 +224,7 @@ const Hero:React.FC = () => {
                 display: flex;
                 position: relative;
                 flex-direction: column;
-                width: 60%;
+                width: 100%;
                 height: 90%;
                 text-align: left;
             }
@@ -253,17 +245,19 @@ const Hero:React.FC = () => {
                 border-radius: 10px;
                 background-color: white;
                 color: red;
-                font-size: 40px;
+                font-size: 70px;
             }
             .HeroIcon{
                 border-radius: 10px;
                 background-color: white;
-                width: 40px;
-                height: 40px;
+                width: 70px;
+                height: 70px;
             }
             #HeroMiddleContainer{
+                display: flex;
+                position: relative;
                 flex-direction: column;
-                width: 50%;
+                width: 30%;
                 height: 80%;
                 justify-content: center;
                 align-items: center;
@@ -346,6 +340,9 @@ const Hero:React.FC = () => {
                     gap: 5%;
                     padding-top: 0%;
                 }
+                #HeroMiddleContainer{
+                    margin-top: 20px;
+                }
                 #HeroBContainer{
                     justify-content: center;
                     align-items: center;
@@ -361,6 +358,7 @@ const Hero:React.FC = () => {
                     align-items: center;
                 }
                 #HeroContactHeader{
+                    width: 100%;
                     justify-content: center;
                     align-items: center;
                 }
