@@ -2,62 +2,36 @@
 import React from "react"
 import { useState, useEffect, useRef } from 'react';
 import { AiOutlineLink } from 'react-icons/ai' 
+import {MdOutlineSlowMotionVideo} from 'react-icons/md'
 
 const Projects:React.FC = () => {
-    const [effectToggle, setEffectToggle] = useState(true);
-    const [effectText, setEffectText] = useState('On');
-    const [projectScrollHeight, setProjectScrollHeight] = useState('0%');
-    const projectTextContainerRef = useRef<HTMLDivElement>(null);
 
-    const toggleEffect = () => {
+    const [animationStateSkills, setAnimationStateSkills] = useState(false);
 
-        setEffectToggle(!effectToggle);
-
-        if (effectToggle === false) {
-            setEffectText('On');
-        } else {
-            setEffectText('Off');
+    const handleScroll = () => {
+        if (window.scrollY > 3500) {
+            setAnimationStateSkills(true);
         }
-    }
-
-    const handleProjectScroll = () => {
-        const projectTextContainer = projectTextContainerRef.current;
-        if (!projectTextContainer) return;
-      
-        const containerHeight = projectTextContainer.clientHeight;
-        const containerTop = projectTextContainer.getBoundingClientRect().top;
-        const scrollPosition = Math.max(0, window.scrollY - containerTop - window.innerHeight * 1.9);
-
-        const isContainerVisible = containerTop + containerHeight >= 0 && containerTop <= window.innerHeight;
-      
-        if (!isContainerVisible) {
-          setProjectScrollHeight('0%');
-        } else {
-          const maxScroll = containerHeight * 2;
-          const projectScrollPercentage = Math.min((scrollPosition / maxScroll) * 100, 100);
-          setProjectScrollHeight(`${projectScrollPercentage}%`);
-          console.log(projectScrollPercentage);
-        }
-    }
+    };
+   
     
     useEffect(() => {
 
-        window.addEventListener('scroll', handleProjectScroll);
+        window.addEventListener('scroll', handleScroll);
         
         return () => {
-            window.removeEventListener('scroll', handleProjectScroll);
+            window.removeEventListener('scroll', handleScroll);
         };
 
     }, []);
 
     return(
-        <div id="Projects"  ref={projectTextContainerRef}>
+        <div id="Projects"  >
             <div id="ProjectsContainer">
                 <div id="ProjectsHeaderContainer">
                     <div id="ProjectsHeader">Projects</div>
-                    <button id="ProjectsHeaderToggle" onClick={toggleEffect}>Effect: {effectText}</button>
                 </div>
-                <div id="ChurchContainer">
+                <div id="ChurchContainer" className={animationStateSkills ? "animate" : ""}>
                     <div id="ChurchImageContainer">
                         <img src="DebreTsion.png" alt="" id="ChurchImage" />
                     </div>
@@ -75,14 +49,20 @@ const Projects:React.FC = () => {
                             </p> 
                         </div>  
                         <div className="LinkContainer">
-                            <div id="ReactLinkContainer">
-                                <a href="https://debretsion.vercel.app/en" id="ChurchLink">Click me to visit the Website!</a>
-                                <AiOutlineLink id="ReactIconLink"/>
-                            </div>
+                            <a href="https://debretsion.vercel.app/en" className="ChurchLink">
+                                <div id="ReactLinkInsideContainer">
+                                    <AiOutlineLink className="ReactIconLink"/>Visit Website!
+                                </div>
+                            </a>
+                            <a href="https://github.com/DebreTsionWeb/debretsion.org" className="ChurchLink">
+                                <div id="ReactVideoDemoContainer">
+                                    <MdOutlineSlowMotionVideo className="ReactIconLink"/>Video Demo!
+                                </div>
+                            </a>
                         </div>          
                     </div>
                 </div>
-                <div id="PreWorkContainer">
+                <div id="PreWorkContainer" className={animationStateSkills ? "animate" : ""}>
                     <div id="PreWorkImageContainer">
                         <img src="" alt="" id="PreWorkImage" />
                     </div>
@@ -104,8 +84,6 @@ const Projects:React.FC = () => {
                 </div>
             </div>
             <style>{`
-
-                :root { --projectScrollHeight: ${projectScrollHeight}; }
                 
                 #Projects{
                     display: flex;
@@ -126,15 +104,6 @@ const Projects:React.FC = () => {
                     justify-content: space-around;
                     align-items: center; 
                     overflow: hidden;                   
-                }
-                #ProjectsHeaderToggle {
-                    display: flex; 
-                    position: absolute;
-                    top: 20%;
-                    right: 5%;
-                    color: white;
-                    background-color: black;
-                    border: 1px solid white;
                 }
                 #ProjectsHeaderContainer{
                     display: flex;
@@ -173,14 +142,29 @@ const Projects:React.FC = () => {
                     display: flex;
                     position: relative;
                     width: 70%;
-                    height: 20%;
+                    height: 22%;
                     flex-direction: row;
                     border-radius: 30px;
                     border: 5px solid white;
                     justify-content: center;
                     align-items: center;
-                    left: ${effectToggle ? '50%' : '0'};
-                    transform: ${effectToggle ? `translateX(calc(-0.9 * ${projectScrollHeight}))` : 'none'};
+                    transform: translateX(-1500px);
+                }
+                .animate {
+                    animation: 2s ease-out forwards;
+                }
+                #ChurchContainer.animate {
+                    animation-name: fadeInFromLeft;
+                }
+                @keyframes fadeInFromLeft{
+                    0% {
+                      transform: translateX(-1500px);
+                      opacity: 0;
+                    }
+                    100% {
+                      transform: translateX(0);
+                      opacity: 1;
+                    }
                 }
                 #ChurchImageContainer{
                     display: flex;
@@ -217,27 +201,61 @@ const Projects:React.FC = () => {
                     font-family: Inter;
                     font-size: 14px;
                 }
-                #ChurchLink{
+                .ChurchLink{
                     color: white;
                     text-decoration: none;
                     font-family: Inter;
-                    font-size: 11px;
+                    font-size: 14px;
                 }
-                #ReactLinkContainer{
-                    
+                .ReactIconLink{
+                    width: 40px;
+                    height: 40px;
+                    color: white;
+                }
+                #ReactLinkInsideContainer{
+                    display: flex;
+                    positiion: relative;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                }
+                #ReactLinkInsideContainer:hover {
+                    opacity: 0.5;
+                }
+                #ReactVideoDemoContainer{
+                    display: flex;
+                    positiion: relative;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                }
+                #ReactVideoDemoContainer:hover {
+                    opacity: 0.5;
                 }
                 #PreWorkContainer{
                     display: flex;
                     position: relative;
                     width: 70%;
-                    height: 20%;
+                    height: 22%;
                     flex-direction: row;
                     border-radius: 30px;
                     border: 5px solid white;
                     justify-content: center;
                     align-items: center;
-                    right: ${effectToggle ? '50%' : '0'};
-                    transform: ${effectToggle ? `translateX(calc(0.9 * ${projectScrollHeight}))` : 'none'};
+                    transform: translateX(1500px);
+                }
+                #PreWorkContainer.animate {
+                    animation-name: fadeInFromRight;
+                }
+                @keyframes fadeInFromRight{
+                    0% {
+                      transform: translateX(1500px);
+                      opacity: 0;
+                    }
+                    100% {
+                      transform: translateX(0);
+                      opacity: 1;
+                    }
                 }
                 #PreWorkImageContainer{
                     display: flex;
@@ -282,7 +300,7 @@ const Projects:React.FC = () => {
                     display: flex;
                     position: relative;
                     width: 90%;
-                    height: 15%;
+                    height: 10%;
                     justify-content: center;
                     align-items: center;
                     border-radius: 50px;
@@ -291,8 +309,7 @@ const Projects:React.FC = () => {
                     display: flex;
                     position: relative;
                     width: 70%;
-                    height: 50%;
-                    border-radius: 20px;
+                    height: 60%;
                     justify-content: center;
                     align-items: center;
                     text-align: center;
@@ -302,13 +319,10 @@ const Projects:React.FC = () => {
                     display: flex;
                     position: relative;
                     width: 35%;
-                    height: 14%;
+                    height: 30%;
                     border-radius: 30px;
-                    justify-content: center;
+                    justify-content: space-around;
                     align-items: center;
-                }
-                .LinkContainer:hover {
-                    transform: scale(1.3); 
                 }
                 // @media(max-width: 900px){
                 //     #Projects{

@@ -101,6 +101,7 @@ const Hero:React.FC = () => {
             #HeroHeader{
                 display: flex;
                 position: relative;
+                height: 30%;
                 text-align: center;
                 color: white;
                 font-size: 40px;
@@ -112,7 +113,7 @@ const Hero:React.FC = () => {
                 position: relative;
                 flex-direction: column;
                 width: 100%;
-                height: 100%;
+                height: 70%;
                 justify-content: center;
                 align-items: center;
                 overflow: hidden;
