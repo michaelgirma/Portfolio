@@ -1,5 +1,8 @@
 'use client' 
 import React from "react"
+import Link from "next/link"
+import { BiLogoGmail } from 'react-icons/bi'
+
 
 const Contact:React.FC = () => {
     return(
@@ -8,12 +11,9 @@ const Contact:React.FC = () => {
                 <div id="CHeaderContainer">
                     <div id="CHeader">Contact Me</div>
                 </div>
-                <div id="CLineContainer"></div>
                 <div id="ContactBodyContainer">
-                    <div id="CIconContainer">
-
-                    </div>              
-                </div>
+                    <Link id="ContactEmail" href='https://mail.google.com/mail?view=cm&fs=1&to=michaelgirma003@gmail.com&su=Draft' target='_blank'><BiLogoGmail id="CGmailIcon"></BiLogoGmail></Link>
+                </div>              
             </div>
            
 
@@ -22,57 +22,61 @@ const Contact:React.FC = () => {
                 display: flex;
                 position: relative;
                 width: 100%;
-                height: 20vh;
-                
+                height: 100vh;
             }
             #ContactsContainer{
                 display: flex;
                 position: relative;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
+                flex-direction: column; 
                 width: 100%;
                 height: 100%;
-                border-radius: 10px;
             }
             #CHeaderContainer{
                 display: flex;
                 position: relative;
-                margin-bottom: 1%;
                 justify-content: center;
                 align-items: center;
                 text-align: center;
-                width: 90%;
-                height: 71px;
-                background-color: #00FFFF;
-                border-radius: 50px;
-                margin-bottom: 30px;
+                width: 100%;
+                height: 35%;
+                background: linear-gradient(-45deg, black, black, white, black);
+                background-size: 400% 400%;
+                animation: gradient 15s ease infinite;
+            }
+            @keyframes gradient {
+                0% {
+                    background-position: 0% 50%;
+                }
+                50% {
+                    background-position: 100% 50%;
+                }
+                100% {
+                    background-position: 0% 50%;
+                }
             }
             #CHeader{
                 display: flex;
                 position: relative;
-                color: #343434;
+                color: white;
                 font-weight: 400;
-                font-size: 32px;
+                font-size: 60px;
                 font-family: InterBold;
-            }
-            #CLineContainer{
-                display: flex;
-                position: relative;
-                width: 100%;
-                height: 0px;
-                border: 2px solid #00FFFF;
             }
             #ContactBodyContainer{
                 display: flex;
                 position: relative;
-                flex-direction: row;
                 width: 100%;
-                height: 90%;                
-            }
-            #CIconContainer{
-
-            }      
+                height: 65%; 
+                justify-content: center;
+                align-items: center;   
+            }  
+            #CGmailIcon{
+                width: 100px;
+                height: 100px;
+                background-color: white;
+                color: red;
+                border-radius: 20px;
+            }  
             `}</style>
         </div>
     )
