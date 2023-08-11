@@ -127,7 +127,6 @@ const Skills:React.FC = () => {
                 box-sizing: border-box;
                 justify-content: center;
                 align-items: center;
-                overflow-x: hidden;
             }
             #SkillsContainer{
                 display: flex;
@@ -137,7 +136,6 @@ const Skills:React.FC = () => {
                 height: 100%;
                 justify-content: space-around;
                 align-items: center;
-                overflow: hidden;
             }
             .animate {
                 animation: 2s ease-out forwards;
@@ -166,7 +164,7 @@ const Skills:React.FC = () => {
                 background-color: black;
                 justify-content: space-around;
                 align-items: center;
-                transform: translateX(-350%);
+                overflow: hidden;
             }
             #BigHeaderContainer{
                 display: flex;
@@ -303,6 +301,11 @@ const Skills:React.FC = () => {
             #SmallHeader{
                 display: none;
             }
+            @media(max-width: 900px){
+                .Title{
+                    font-size: 12px;
+                }
+            }
             @media (max-width: 700px){
                 #Skills{
                     height: 150vh;
@@ -319,8 +322,8 @@ const Skills:React.FC = () => {
                     font-size: 13px;
                 }
                 .Icon{
-                    width: 50px;
-                    height: 50px;
+                    width: 40px;
+                    height: 40px;
 
                 }
                 .ImageContainer{
@@ -329,10 +332,8 @@ const Skills:React.FC = () => {
                 #GoogleCloud{
                     width: 100%;
                 }
-            }
-            @media(max-width: 900px){
-                .Title{
-                    font-size: 12px;
+                .SubTitle{
+                    font-size: 22px;
                 }
             }
             @media(max-width: 450px){

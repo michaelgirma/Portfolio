@@ -1,6 +1,6 @@
 'use client' 
 import React from "react"
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect,} from 'react';
 import { AiOutlineLink } from 'react-icons/ai' 
 import {MdOutlineSlowMotionVideo} from 'react-icons/md'
 
@@ -64,7 +64,7 @@ const Projects:React.FC = () => {
                 </div>
                 <div id="PreWorkContainer" className={animationStateSkills ? "animate" : ""}>
                     <div id="PreWorkImageContainer">
-                        <img src="" alt="" id="PreWorkImage" />
+                        <img src="CreatorVerseImage.png" alt="" id="PreWorkImage" />
                     </div>
                     <div id="PreWorkTextContainer">
                         <div className="TitleContainer">
@@ -78,7 +78,16 @@ const Projects:React.FC = () => {
                             </p> 
                         </div>
                         <div className="LinkContainer">
-                            <a href="https://prework-theta.vercel.app/" id="PreWorkLink">Click me to visit the Website!</a>
+                            <a href="https://prework-theta.vercel.app/" className="ChurchLink">
+                                <div id="ReactLinkInsideContainer">
+                                    <AiOutlineLink className="ReactIconLink"/>Visit Website!
+                                </div>
+                            </a>
+                            <a href="https://github.com/michaelgirma/CodePathWeb103PreWork" className="ChurchLink">
+                                <div id="ReactVideoDemoContainer">
+                                    <MdOutlineSlowMotionVideo className="ReactIconLink"/>Video Demo!
+                                </div>
+                            </a>
                         </div>             
                     </div>
                 </div>
@@ -103,7 +112,6 @@ const Projects:React.FC = () => {
                     flex-direction: column;
                     justify-content: space-around;
                     align-items: center; 
-                    overflow: hidden;                   
                 }
                 #ProjectsHeaderContainer{
                     display: flex;
@@ -141,14 +149,15 @@ const Projects:React.FC = () => {
                 #ChurchContainer{
                     display: flex;
                     position: relative;
-                    width: 70%;
+                    width: 80%;
                     height: 22%;
                     flex-direction: row;
                     border-radius: 30px;
                     border: 5px solid white;
                     justify-content: center;
                     align-items: center;
-                    transform: translateX(-1500px);
+                    overflow: hidden;
+                    opacity: 0;
                 }
                 .animate {
                     animation: 2s ease-out forwards;
@@ -235,14 +244,15 @@ const Projects:React.FC = () => {
                 #PreWorkContainer{
                     display: flex;
                     position: relative;
-                    width: 70%;
+                    width: 80%;
                     height: 22%;
                     flex-direction: row;
                     border-radius: 30px;
                     border: 5px solid white;
                     justify-content: center;
                     align-items: center;
-                    transform: translateX(1500px);
+                    overflow: hidden;
+                    opacity: 0;
                 }
                 #PreWorkContainer.animate {
                     animation-name: fadeInFromRight;
@@ -262,12 +272,14 @@ const Projects:React.FC = () => {
                     position: relative;
                     width: 40%;
                     height: 100%;
+                    justify-content: center;
+                    align-items: center;
                 }
                 #PreWorkImage{
                     display: flex;
                     position: relative;
-                    width: 100%;
-                    height: 100%;
+                    width: 95%;
+                    height: 75%;
                 }
                 #PreWorkTextContainer{
                     display: flex;
@@ -289,12 +301,7 @@ const Projects:React.FC = () => {
                     color: white;
                     font-family: Inter;
                     font-size: 14px;
-                }
-                #PreWorkLink{
-                    color: white;
-                    text-decoration: none;
-                    font-family: Inter;
-                    font-size: 11px;
+                    overflow: scroll;
                 }
                 .TitleContainer{
                     display: flex;
@@ -308,67 +315,67 @@ const Projects:React.FC = () => {
                 .DescriptionContainer{
                     display: flex;
                     position: relative;
-                    width: 70%;
-                    height: 60%;
+                    width: 90%;
+                    height: 43%;
                     justify-content: center;
-                    align-items: center;
+                    align-items: flex-start;
                     text-align: center;
-                    overflow-x: scroll;
+                    overflow: scroll;
                 }
                 .LinkContainer{
                     display: flex;
                     position: relative;
-                    width: 35%;
+                    width: 100%;
                     height: 30%;
                     border-radius: 30px;
-                    justify-content: space-around;
+                    justify-content: center;
                     align-items: center;
+                    gap: 30px;
                 }
-                // @media(max-width: 900px){
-                //     #Projects{
-                //         height: 200vh;
-                //     }
-                //     #ChurchContainer{
-                //         flex-direction: column;
-                //         width: 50%;
-                //         height: 80%;
-                //         justify-content: center;
-                //         align-items: center;
-                //     }
-                //     #ChurchTextContainer{
-                //         width: 90%;
-                //         height: 60%;
-                //     }
-                //     .LinkContainer{
-                //         width: 55%;
-                //     }
-                //     .TitleContainer{
-                //         width: 100%;
-                //         border: 1px solid blue;
-                //     }
-                //     .DescriptionContainer{
-                //         width: 100%;
-                //     }
-                //     #PreWorkContainer{
-                //         flex-direction: column;
-                //         width: 50%;
-                //         height: 80%;
-                //         justify-content: center;
-                //         align-items: center;
-                //     }
-                //     #PreWorkTextContainer{
-                //         width: 90%;
-                //         height: 60%;
-                //     }
-                // }
-                // @media(max-width: 700px){
-                //     #ChurchContainer{
-                //         width: 60%;
-                //     }
-                //     #PreWorkContainer{
-                //         width: 60%;
-                //     }
-                // }
+                @media(max-width: 900px){
+                    #ChurchContainer{
+                        width: 50%;
+                    }
+                    #PreWorkContainer{
+                        width: 50%;
+                    }
+                    #ChurchImageContainer{
+                        width: 0%;
+                    }
+                    #PreWorkImageContainer{
+                        width: 0%;
+                    }
+                    #ChurchTextContainer{
+                        width: 100%;
+                    }
+                    #PreWorkTextContainer{
+                        width: 100%;
+                    }
+                    #PreWorkImage{
+                        display: none;
+                    }
+                    #ChurchImage{
+                        display: none;
+                    }
+                   
+                }
+                @media(max-width: 700px){
+                    #ChurchTitle{
+                        font-size: 15px;
+
+                    }
+                    #PreWorkTitle{
+                        font-size: 15px;
+                    }
+                }
+                @media(max-width: 450px){
+                    #ChurchContainer{
+                        width: 90%;
+                    }
+                    #PreWorkContainer{
+                        width: 90%;
+                    }
+                }
             `}</style>
         </div>
     )
