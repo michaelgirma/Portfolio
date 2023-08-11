@@ -2,6 +2,7 @@
 import React from "react"
 import { useState, useEffect } from "react";
 import { BiLogoGmail } from 'react-icons/bi'
+import Link from "next/link"
 
 
 const Hero:React.FC = () => {
@@ -15,10 +16,8 @@ const Hero:React.FC = () => {
     };
 
     useEffect(() => {
-        // Add scroll event listener when the component mounts
         window.addEventListener('scroll', handleScroll);
 
-        // Remove the event listener when the component unmounts
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
@@ -60,7 +59,7 @@ const Hero:React.FC = () => {
                                 <div id="HeroContactBody"> mikegirma2014@gmail.com<br/><br/></div>
                                 <br/>
                                 <div id="HeroIconContainer">
-                                    <a href="https://www.google.com/gmail/about/"><BiLogoGmail id="GmailIcon"></BiLogoGmail></a>
+                                    <Link id="ContactEmail" href='https://mail.google.com/mail?view=cm&fs=1&to=michaelgirma003@gmail.com&su=Draft' target='_blank'><BiLogoGmail id="GmailIcon"></BiLogoGmail></Link>
                                     <a href="https://www.linkedin.com/in/michael-girma/"><img src="LinkedIn.png" className="HeroIcon" /></a>
                                     <a href="https://github.com/michaelgirma"><img src='GitHubIcon.png' className="HeroIcon"/></a>
                                 </div>

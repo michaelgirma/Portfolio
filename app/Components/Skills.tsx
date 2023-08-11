@@ -109,7 +109,7 @@ const Skills:React.FC = () => {
                                         <img src='BashIcon.png' className="Icon"/>
                                     </div>
                                     <div className="IconContainer">
-                                        <img src='GitHubIcon.png' className="Icon"/>
+                                        <a href="https://github.com/michaelgirma"><img src='GitHubIcon.png' className="Icon"/></a>
                                     </div>
                                 </div>
                             </div>

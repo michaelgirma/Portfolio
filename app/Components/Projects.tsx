@@ -120,7 +120,7 @@ const Projects:React.FC = () => {
                     align-items: center;
                     text-align: center;
                     width: 100%;
-                    height: 25%;
+                    height: 20%;
                     background-color: black;
                     margin-bottom: 30px;
                     background: linear-gradient(-45deg, black, black, white, black);
