@@ -40,16 +40,17 @@ const Experience:React.FC = () => {
                     display: flex;
                     position: relative;
                     width: 100%;
-                    height: 150vh;  
+                    height: 150vh; 
                 }
                 #ExperienceContainer{
                     display: flex;
                     position: relative;
                     flex-direction: column;
-                    width: 98%;
+                    width: 100%;
                     height: 100%;
                     justify-content: space-around;
                     align-items: center;
+                    overflow: hidden;
                 }
                 #ExperienceHeaderContainer{
                     display: flex;
@@ -66,7 +67,7 @@ const Experience:React.FC = () => {
                     margin-bottom: 30px; 
                     background: linear-gradient(-45deg, black, black, white, black);
                     background-size: 400% 400%;
-                    animation: gradient 15s ease infinite;              
+                    animation: gradient 15s ease infinite; 
                 }
                 keyframes gradient{
                     0% {
@@ -95,10 +96,9 @@ const Experience:React.FC = () => {
                     margin-top: 50px;
                     border-radius: 50px;
                     justify-content: center;
-                    align-items: center;
+                    align-items: flex-start;
                     text-align: center;
-                    overflow-y: scroll;
-                    transform: translateX(200%)
+                    overflow: hidden;
                 }
                 .animate {
                     animation: 2s ease-out forwards;
@@ -127,7 +127,7 @@ const Experience:React.FC = () => {
                         flex-direction: column;
                     }
                     #ExperienceHeaderContainer{
-                        width: 70%;
+                        width: 100%;
                         height: 35%;
                     }
                     #ExperienceTextContainer{

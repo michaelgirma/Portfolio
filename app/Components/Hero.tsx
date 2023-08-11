@@ -36,7 +36,7 @@ const Hero:React.FC = () => {
                     </div>
                 </div>
                 <div id="HeroBodyContainer">
-                    <div id="HeroMiddleContainer" className={animationState ? "animate" : ""}>
+                    <div id="HeroMiddleContainer" className={animationState ? "animate" : ""} >
                         <div id="HeroImageContainer">
                             <div id="HeroImageBorder">
                                 <div id="HeroImage"> <img src="picture1.png"/></div>
@@ -153,7 +153,7 @@ const Hero:React.FC = () => {
                 justify-content: center;
                 align-items: center;
                 gap: 5%;
-                overflow-x: hidden;
+                overflow: hidden;
             }
             #HeroLeftContainer{
                 display: flex;
@@ -163,8 +163,8 @@ const Hero:React.FC = () => {
                 height: 80%;
                 justify-content: space-between;
                 align-items: center;
-                transform: translateX(-350%);
                 overflow: hidden;
+                opacity: 0;
                 padding-top: 12%;
             }
             #HeroBContainer{
@@ -264,8 +264,8 @@ const Hero:React.FC = () => {
                 align-items: center;
                 border-radius: 50%;
                 border: 1px solid white;  
-                transform: translateX(-220%);
                 overflow: hidden;
+                opacity: 0;
             }
             #HeroImageContainer{
                 display: flex;
@@ -318,12 +318,12 @@ const Hero:React.FC = () => {
             }
             @keyframes fadeInFromRight {
                 0% {
-                  transform: translateX(100%);
-                  opacity: 0;
+                    transform: translateX(-100%);
+                    opacity: 0;
                 }
                 100% {
-                  transform: translateX(0);
-                  opacity: 1;
+                    transform: translateX(0);
+                    opacity: 1;
                 }
             }
 
