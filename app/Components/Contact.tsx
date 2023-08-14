@@ -12,7 +12,9 @@ const Contact:React.FC = () => {
                     <div id="CHeader">Contact Me</div>
                 </div>
                 <div id="ContactBodyContainer">
-                    <Link id="ContactEmail" href='https://mail.google.com/mail?view=cm&fs=1&to=michaelgirma003@gmail.com&su=Draft' target='_blank'><BiLogoGmail id="CGmailIcon"></BiLogoGmail></Link>
+                    <Link id="ContactEmail" href='https://mail.google.com/mail?view=cm&fs=1&to=michaelgirma003@gmail.com&su=Draft' target='_blank'><BiLogoGmail className="CIcon"></BiLogoGmail></Link>
+                    <Link href="https://www.linkedin.com/in/michael-girma/"><img src="LinkedIn.png" className="CIcon" /></Link>
+                    <Link href="https://github.com/michLinkelgirma"><img src='GitHubIcon.png' className="CIcon"/></Link>
                 </div>              
             </div>
            
@@ -69,14 +71,28 @@ const Contact:React.FC = () => {
                 height: 65%; 
                 justify-content: center;
                 align-items: center;   
+                gap: 15%;
             }  
-            #CGmailIcon{
+            .CIcon{
                 width: 100px;
                 height: 100px;
                 background-color: white;
                 color: red;
                 border-radius: 20px;
             }  
+            .CIcon:hover{
+                opacity: 0.5;
+                transform: scale(1.2);
+            }
+            @media(max-width: 450px){
+                #Contacts{
+                    height: 150vh;
+                }
+                #ContactBodyContainer{
+                    flex-direction: column;
+                }
+                
+            }
             `}</style>
         </div>
     )

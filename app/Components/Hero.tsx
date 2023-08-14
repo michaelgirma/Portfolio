@@ -28,7 +28,7 @@ const Hero:React.FC = () => {
         <>
         <div id="Hero">
             <div id="HeroContainer">
-                <div id="HeroHeaderContainer" className="fade-in">
+                <div id="HeroHeaderContainer" >
                     <div id="HeroHeader">Hello, Im Michael Girma <br/> An Upcoming FullStack developer </div>
                     <div id="HeroRightContainer">
                            <h1 id="Welcome">Welcome</h1>
@@ -60,8 +60,8 @@ const Hero:React.FC = () => {
                                 <br/>
                                 <div id="HeroIconContainer">
                                     <Link id="ContactEmail" href='https://mail.google.com/mail?view=cm&fs=1&to=michaelgirma003@gmail.com&su=Draft' target='_blank'><BiLogoGmail id="GmailIcon"></BiLogoGmail></Link>
-                                    <a href="https://www.linkedin.com/in/michael-girma/"><img src="LinkedIn.png" className="HeroIcon" /></a>
-                                    <a href="https://github.com/michaelgirma"><img src='GitHubIcon.png' className="HeroIcon"/></a>
+                                    <Link href="https://www.linkedin.com/in/michael-girma/"><img src="LinkedIn.png" className="HeroIcon" /></Link>
+                                    <Link href="https://github.com/michLinkelgirma"><img src='GitHubIcon.png' className="HeroIcon"/></Link>
                                 </div>
                             </div>
                         </div>
@@ -76,7 +76,6 @@ const Hero:React.FC = () => {
                 width: 100%;
                 height: 150vh;
                 margin-top: 10%;
-                margin-bottom: 10%;
             }
             #HeroContainer{
                 display: flex;
@@ -387,6 +386,9 @@ const Hero:React.FC = () => {
                 } 
                 #HeroHeader{
                     font-size: 30px;
+                }
+                #HeroRightContainer{
+                    width: 100%;
                 }
             }
 
