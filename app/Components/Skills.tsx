@@ -138,7 +138,7 @@ const Skills:React.FC = () => {
                 align-items: center;
             }
             .animate {
-                animation: 2s ease-out forwards;
+                animation: 3.5s ease-out forwards;
             }
             #TechnicalSkills.animate {
                 animation-name: fadeInFromLeft;
@@ -165,6 +165,7 @@ const Skills:React.FC = () => {
                 justify-content: space-around;
                 align-items: center;
                 overflow: hidden;
+                opacity: 0;
             }
             #BigHeaderContainer{
                 display: flex;

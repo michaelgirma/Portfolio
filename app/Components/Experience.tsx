@@ -101,7 +101,7 @@ const Experience:React.FC = () => {
                     overflow: hidden;
                 }
                 .animate {
-                    animation: 2s ease-out forwards;
+                    animation: 3.5s ease-out forwards;
                 }
                 #ExperienceTextContainer.animate {
                     animation-name: fadeInFromRight;
