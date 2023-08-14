@@ -121,6 +121,11 @@ const Experience:React.FC = () => {
                     font-family: Inter;
                     font-size: 20px;
                 }
+                @media(max-width: 830px){
+                    .animate {
+                        animation: 5s ease-out forwards;
+                    }
+                }
                 @media(max-width: 700px){
                     #ExperienceContainer{
                         width: 100%;

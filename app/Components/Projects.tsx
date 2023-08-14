@@ -359,6 +359,11 @@ const Projects:React.FC = () => {
                     }
                    
                 }
+                @media(max-width: 830px){
+                    .animate {
+                        animation: 5s ease-out forwards;
+                    }
+                }
                 @media(max-width: 700px){
                     #ChurchTitle{
                         font-size: 15px;
