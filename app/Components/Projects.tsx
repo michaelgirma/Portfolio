@@ -160,7 +160,7 @@ const Projects:React.FC = () => {
                     opacity: 0;
                 }
                 .animate {
-                    animation: 3.5s ease-out forwards;
+                    animation: 2s ease-out forwards;
                 }
                 #ChurchContainer.animate {
                     animation-name: fadeInFromLeft;
@@ -358,11 +358,6 @@ const Projects:React.FC = () => {
                         display: none;
                     }
                    
-                }
-                @media(max-width: 830px){
-                    .animate {
-                        animation: 5s ease-out forwards;
-                    }
                 }
                 @media(max-width: 700px){
                     #ChurchTitle{
