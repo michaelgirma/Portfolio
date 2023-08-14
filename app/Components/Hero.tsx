@@ -296,7 +296,7 @@ const Hero:React.FC = () => {
                 padding-left: 40px;
             }
             .animate {
-                animation: 3.5s ease-out forwards;
+                animation: 2s ease-out forwards;
             }
             #HeroLeftContainer.animate {
                 animation-name: fadeInFromLeft;

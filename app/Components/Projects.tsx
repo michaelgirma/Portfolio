@@ -160,7 +160,7 @@ const Projects:React.FC = () => {
                     opacity: 0;
                 }
                 .animate {
-                    animation: 3.5s ease-out forwards;
+                    animation: 2s ease-out forwards;
                 }
                 #ChurchContainer.animate {
                     animation-name: fadeInFromLeft;

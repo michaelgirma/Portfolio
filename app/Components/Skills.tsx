@@ -138,7 +138,7 @@ const Skills:React.FC = () => {
                 align-items: center;
             }
             .animate {
-                animation: 3.5s ease-out forwards;
+                animation: 2s ease-out forwards;
             }
             #TechnicalSkills.animate {
                 animation-name: fadeInFromLeft;

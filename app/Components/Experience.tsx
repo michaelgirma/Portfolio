@@ -99,9 +99,10 @@ const Experience:React.FC = () => {
                     align-items: flex-start;
                     text-align: center;
                     overflow: hidden;
+                    opacity: 0;
                 }
                 .animate {
-                    animation: 3.5s ease-out forwards;
+                    animation: 2s ease-out forwards;
                 }
                 #ExperienceTextContainer.animate {
                     animation-name: fadeInFromRight;
