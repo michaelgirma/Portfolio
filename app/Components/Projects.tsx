@@ -9,7 +9,7 @@ const Projects:React.FC = () => {
     const [animationStateSkills, setAnimationStateSkills] = useState(false);
 
     const handleScroll = () => {
-        if (window.scrollY > 3500) {
+        if (window.scrollY > 3501) {
             setAnimationStateSkills(true);
         }
     };
