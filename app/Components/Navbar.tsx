@@ -26,6 +26,22 @@ const Navbar:React.FC = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }
+
+  const scrollToPosition = (percentage: number) => {
+    const totalHeight = document.body.scrollHeight;
+    const position = totalHeight * (percentage / 100);
+    window.scrollTo({
+      top: position,
+      behavior: "smooth"
+    });
+  }
   
 
     return(
@@ -34,11 +50,11 @@ const Navbar:React.FC = () => {
             <div id="NavbarContainer">               
               <div id="MenuContainer">
                 <div id="MenuListContainer" className={isMenuOpen ? "open" : ""}>
-                    <p className="style" id="NavHome">Home</p>
-                    <p className="style" id="NavSkills">Skills</p>
-                    <p className="style" id="NavExperience">Experience</p>
-                    <p className="style" id="NavProject">Projects</p>
-                    <p className="style" id="NavContact">Contacts</p>
+                  <button className="style" id="NavHome" onClick={scrollToTop}>Home</button>
+                  <button className="style" id="NavSkills" onClick={() => scrollToPosition(20)}>Skills</button>
+                  <button className="style" id="NavExperience" onClick={() => scrollToPosition(41)}>Experience</button>
+                  <button className="style" id="NavProject" onClick={() => scrollToPosition(61)}>Projects</button>
+                  <button className="style" id="NavContact" onClick={() => scrollToPosition(85)}>Contacts</button>
                 </div>
                 <div className="iconContainer" onClick={handleMenuToggle}>
                   {isMenuOpen ? (
@@ -116,7 +132,7 @@ const Navbar:React.FC = () => {
                 font-size: 18px;
               }
               
-              #MenuListContainer p {
+              #MenuListContainer button {
                 position: relative;
                 border-bottom: 3px solid transparent; 
                 color: white;
@@ -126,7 +142,7 @@ const Navbar:React.FC = () => {
 
               }
               
-              #MenuListContainer p:hover {
+              #MenuListContainer button:hover {
                 opacity: 0.5;
               }
 
@@ -135,6 +151,11 @@ const Navbar:React.FC = () => {
               }
               .style{
                 font-family: Inter;
+                font-size: 20px;
+                text-decoration: none;
+                background-color: black;
+                border: 1px solid black;
+                color: white;
               }
 
               #LineContainer{
@@ -178,14 +199,15 @@ const Navbar:React.FC = () => {
                   position: absolute;
                   flex-direction: column;
                   width: 100%;
+                  height: 300%;
+                  justify-content: space-around;
                   align-items: center;
-                  padding-top: 50px;
+                  padding-top: 80px;
                   padding-bottom: 50px;
                   padding-left: 10px;
                   color: white;
                   font-size: 18px;
                   background-color: black;
-                  border: 1px solid white;
                   border-bottom-left-radius: 30px;
                   border-bottom-right-radius: 30px;
                   animation-name: slideDownAnimation;
@@ -202,12 +224,12 @@ const Navbar:React.FC = () => {
                   }
                 }
                 
-                #MenuListContainer p {
+                #MenuListContainer button {
                   position: relative;
                   border-bottom: 3px solid transparent; 
                 }
                 
-                #MenuListContainer p:hover {
+                #MenuListContainer button:hover {
                   border-bottom: 3px solid #white;
                   transition: border-bottom 0.5s ease;
                 }
