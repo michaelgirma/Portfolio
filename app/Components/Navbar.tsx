@@ -46,7 +46,7 @@ const Navbar:React.FC = () => {
 
     return(
       <>
-        <div id="Navbar" id="fade-in">
+        <div id="Navbar" className="fade-in">
             <div id="NavbarContainer">               
               <div id="MenuContainer">
                 <div id="MenuListContainer" className={isMenuOpen ? "open" : ""}>
@@ -80,7 +80,7 @@ const Navbar:React.FC = () => {
                     background-color: black;
                     z-index: 9999;
                }
-               #fade-in {
+               .fade-in {
                 opacity: 0;
                 animation-name: fadeInAnimation;
                 animation-duration: 2s;
