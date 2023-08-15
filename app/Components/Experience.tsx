@@ -94,7 +94,6 @@ const Experience:React.FC = () => {
                     width: 70%;
                     height: 70%;
                     margin-top: 50px;
-                    border-radius: 50px;
                     justify-content: center;
                     align-items: flex-start;
                     text-align: center;
