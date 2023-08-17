@@ -29,7 +29,7 @@ const Hero:React.FC = () => {
         <div id="Hero">
             <div id="HeroContainer">
                 <div id="HeroHeaderContainer" >
-                    <div id="HeroHeader">Hello, Im Michael Girma <br/> An Upcoming FullStack developer </div>
+                    <div id="HeroHeader">Hello, Im Michael Girma! <br/> An Upcoming Full-Stack Developer </div>
                     <div id="HeroRightContainer">
                            <h1 id="Welcome">Welcome</h1>
                     </div>
@@ -150,18 +150,17 @@ const Hero:React.FC = () => {
                 flex-direction: row;
                 width: 100%;
                 height: 60%;
-                justify-content: center;
+                justify-content: space-around;
                 align-items: center;
-                gap: 5%;
                 overflow: hidden;
             }
             #HeroLeftContainer{
                 display: flex;
                 position: relative;
                 flex-direction: column;
-                width: 60%;
-                height: 80%;
-                justify-content: space-between;
+                width: 35%;
+                height: 100%;
+                justify-content: center;
                 align-items: center;
                 overflow: hidden;
                 opacity: 0;
