@@ -52,8 +52,8 @@ const Navbar:React.FC = () => {
                 <div id="MenuListContainer" className={isMenuOpen ? "open" : ""}>
                   <button className="style" id="NavHome" onClick={scrollToTop}>Home</button>
                   <button className="style" id="NavSkills" onClick={() => scrollToPosition(20)}>Skills</button>
-                  <button className="style" id="NavExperience" onClick={() => scrollToPosition(41)}>Experience</button>
-                  <button className="style" id="NavProject" onClick={() => scrollToPosition(61)}>Projects</button>
+                  <button className="style" id="NavExperience" onClick={() => scrollToPosition(44)}>Experience</button>
+                  <button className="style" id="NavProject" onClick={() => scrollToPosition(59)}>Projects</button>
                   <button className="style" id="NavContact" onClick={() => scrollToPosition(85)}>Contacts</button>
                 </div>
                 <div className="iconContainer" onClick={handleMenuToggle}>
@@ -144,6 +144,7 @@ const Navbar:React.FC = () => {
               
               #MenuListContainer button:hover {
                 opacity: 0.5;
+                cursor: pointer;
               }
 
               .iconContainer{

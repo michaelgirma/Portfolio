@@ -320,7 +320,7 @@ const Projects:React.FC = () => {
                     justify-content: center;
                     align-items: flex-start;
                     text-align: center;
-                    overflow: scroll;
+                    overflow-y: scroll;
                 }
                 .LinkContainer{
                     display: flex;

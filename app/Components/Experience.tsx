@@ -40,7 +40,7 @@ const Experience:React.FC = () => {
                     display: flex;
                     position: relative;
                     width: 100%;
-                    height: 150vh; 
+                    height: 100vh; 
                 }
                 #ExperienceContainer{
                     display: flex;
@@ -48,7 +48,7 @@ const Experience:React.FC = () => {
                     flex-direction: column;
                     width: 100%;
                     height: 100%;
-                    justify-content: space-around;
+                    justify-content: center;
                     align-items: center;
                     overflow: hidden;
                 }
@@ -59,7 +59,7 @@ const Experience:React.FC = () => {
                     align-items: center;
                     text-align: center;
                     width: 100%;
-                    height: 35%;
+                    height: 70%;
                     margin-top: 10%;
                     background-color: black;
                     color: white;
@@ -97,7 +97,7 @@ const Experience:React.FC = () => {
                     justify-content: center;
                     align-items: flex-start;
                     text-align: center;
-                    overflow: hidden;
+                    overflow-y: hidden;
                     opacity: 0;
                 }
                 .animate {
@@ -132,6 +132,7 @@ const Experience:React.FC = () => {
                     }
                     #ExperienceTextContainer{
                         width: 90%;
+                        overflow-y: scroll;
                     }
                 }
             `}</style>
