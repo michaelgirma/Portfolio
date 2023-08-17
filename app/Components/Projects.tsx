@@ -72,7 +72,7 @@ const Projects:React.FC = () => {
                         </div>
                         <div className="DescriptionContainer">
                             <p id="PreWorkDescription">I made a fullstack website called CreatorVerse using React, Javascript, and Supabase. 
-                            On this site you can create profiles for anybody that is online and has social media platoforms. 
+                            On this site you can create profiles for anybody that is online and has a social media platform. 
                             Using CRUD operations, users can add, view, modify, or delete profiles with ease. This project was 
                             made for my Code Path class to teach me how to devleop a frontend that can interact with an API and supports CRUD operations.  
                             </p> 

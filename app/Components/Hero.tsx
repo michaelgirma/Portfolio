@@ -1,7 +1,7 @@
 'use client' 
 import React from "react"
 import { useState, useEffect } from "react";
-import { BiLogoGmail } from 'react-icons/bi'
+import {HiOutlineDocumentText} from 'react-icons/hi'
 import Link from "next/link"
 
 
@@ -59,9 +59,11 @@ const Hero:React.FC = () => {
                                 <div id="HeroContactBody"> mikegirma2014@gmail.com<br/><br/></div>
                                 <br/>
                                 <div id="HeroIconContainer">
-                                    <Link id="ContactEmail" href='https://mail.google.com/mail?view=cm&fs=1&to=michaelgirma003@gmail.com&su=Draft' target='_blank'><BiLogoGmail id="GmailIcon"></BiLogoGmail></Link>
-                                    <Link href="https://www.linkedin.com/in/michael-girma/"><img src="LinkedIn.png" className="HeroIcon" /></Link>
-                                    <Link href="https://github.com/michLinkelgirma"><img src='GitHubIcon.png' className="HeroIcon"/></Link>
+                                    <a href="https://docs.google.com/document/d/1VdYK-Otr_fJQx-vKDrNG03jO-yE7fAPE5avkzHx_xgU/edit" id="ResumeLinkContainer" target="_blank" rel="noopener noreferrer">
+                                        <div id="ResumerIcon">
+                                            <HiOutlineDocumentText id="Resume"/>Visit Resume!
+                                        </div>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -239,6 +241,40 @@ const Hero:React.FC = () => {
                 height: 50%;
                 justify-content: space-around;
                 align-items: center;
+            }
+            #ResumeLinkContainer{
+                display: flex;
+                position: relative;
+                flex-direction: column;
+                width: 100%;
+                height: 100%;
+                justify-content: center;
+                align-items: center;
+            }
+            #ResumerIcon{
+                display: flex;
+                position: relative;
+                flex-direction: column;
+                width: 100%;
+                height: 100%;
+                justify-content: center;
+                align-items: center;
+                text-decoration: none;
+                color: white;
+            }
+            #Resume{
+                text-decoration: none;
+                color: white;
+                font-family: Inter;
+                font-size: 60px;
+            }
+            #ResumerIcon:hover{
+                opacity: 0.5;
+                transform: scale(1.2);
+            }
+            #ResumeLinkContainer, #ResumeLinkContainer:visited {
+                text-decoration: none;
+                color: black;  
             }
             #GmailIcon{
                 border-radius: 10px;
