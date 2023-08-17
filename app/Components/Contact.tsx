@@ -12,9 +12,9 @@ const Contact:React.FC = () => {
                     <div id="CHeader">Contact Me</div>
                 </div>
                 <div id="ContactBodyContainer">
-                    <Link id="ContactEmail" href='https://mail.google.com/mail?view=cm&fs=1&to=michaelgirma003@gmail.com&su=Draft' target='_blank'><BiLogoGmail className="CIcon"></BiLogoGmail></Link>
-                    <Link href="https://www.linkedin.com/in/michael-girma/"><img src="LinkedIn.png" className="CIcon" /></Link>
-                    <Link href="https://github.com/michLinkelgirma"><img src='GitHubIcon.png' className="CIcon"/></Link>
+                    <Link id="ContactEmail" href='https://mail.google.com/mail?view=cm&fs=1&to=michaelgirma003@gmail.com&su=Draft' target='_blank' rel="noopener noreferrer"><BiLogoGmail className="CIcon"></BiLogoGmail></Link>
+                    <Link href="https://www.linkedin.com/in/michael-girma/" target='_blank' rel="noopener noreferrer" ><img src="LinkedIn.png" className="CIcon" /></Link>
+                    <Link href="https://github.com/michLinkelgirma" target='_blank' rel="noopener noreferrer"><img src='GitHubIcon.png' className="CIcon"/></Link>
                 </div>              
             </div>
            
