@@ -48,7 +48,7 @@ const Hero:React.FC = () => {
                                 <div id="HBiographyHeader">BIOGRAPHY</div>
                             </div>
                             <div id="HeroBiographyBodyContainer">
-                                <div id="HeroBiographyBody">Hello Im Michael Girma an upcoming FullStack developer. I am a rising sophmore attending the University of Maryland,College Park. I started my coding journey at the beginning of 2023 summer with a main interest in web development and with the guidance of peers I am continuing my journey.</div>
+                                <div id="HeroBiographyBody">Hello Im Michael Girma an upcoming Full-Stack developer. I am a rising sophmore attending the University of Maryland,College Park. I started my coding journey at the beginning of 2023 summer with a main interest in web development and with the guidance of peers I am continuing my journey.</div>
                             </div>
                         </div>
                         <div id="HeroCContainer">
