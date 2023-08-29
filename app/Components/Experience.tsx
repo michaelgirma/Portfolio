@@ -135,6 +135,11 @@ const Experience:React.FC = () => {
                         overflow-y: scroll;
                     }
                 }
+                @media(max-width: 401px){
+                    #CurrentText{
+                        font-size: 18px;
+                    }
+                }
             `}</style>
         </div>
     );

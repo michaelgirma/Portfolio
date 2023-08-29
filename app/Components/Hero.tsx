@@ -411,10 +411,17 @@ const Hero:React.FC = () => {
             }
             @media(max-width: 401px){
                 #Hero{
-                    margin-top: 35%;
+                    height: 220vh;
+                    margin-top: 50%;
                 }
                 #HContactHeader{
                     font-size: 15px;
+                }
+                #HeroLeftContainer{
+                    width: 70%;
+                }
+                #HeroMiddleContainer{
+                    margin-bottom: 8%;
                 }
                 #HBiographyHeader{
                     font-size: 15px;

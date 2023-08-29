@@ -205,7 +205,6 @@ const Navbar:React.FC = () => {
                   align-items: center;
                   padding-top: 80px;
                   padding-bottom: 50px;
-                  padding-left: 10px;
                   color: white;
                   font-size: 18px;
                   background-color: black;
@@ -243,7 +242,6 @@ const Navbar:React.FC = () => {
                   width: 50px;
                   height: 30px;
                   margin-top: 20px;
-                  padding-left: 10px;
                   color: white;
                   
                 }
