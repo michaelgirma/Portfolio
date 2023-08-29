@@ -177,7 +177,6 @@ const Skills:React.FC = () => {
                 height: 35%;
                 color: white;
                 font-size: 14px;
-                margin-bottom: 30px;
                 background: linear-gradient(-45deg, black, black, white, black);
                 background-size: 400% 400%;
                 animation: gradient 15s ease infinite;
@@ -344,7 +343,7 @@ const Skills:React.FC = () => {
                     height: 50%;
                 }
                 .Title{
-                    font-size: 10px;
+                    font-size: 12px;
                 }
                 .Icon{
                     width: 30px;
@@ -355,7 +354,7 @@ const Skills:React.FC = () => {
 
                 }
                 .SubTitle{
-                    font-size: 12px;
+                    font-size: 15px;
                 }
                 .ImageContainer{
                     align-items: center;
